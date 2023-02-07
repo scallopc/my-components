@@ -48,4 +48,6 @@ export default createGlobalStyle`
     text-decoration: none;
     color: initial;
   }
+
+  ${scroll}
 `;
