@@ -15,10 +15,9 @@ import {
   Link,
 } from "../styles";
 
-import { Dropdown } from "primereact/dropdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CascadeSelect } from "primereact/cascadeselect";
 import Line from "../../components/line/line";
+import { DropdownTeste } from "../../components/dropdowns/dropdown";
 
 export default function PageDropdowns() {
   const [selectedCities1, setSelectedCities1] = useState(null);
@@ -34,11 +33,11 @@ export default function PageDropdowns() {
   };
 
   const cities = [
-    { name: "New York", code: "NY" },
-    { name: "Rome", code: "RM" },
-    { name: "London", code: "LDN" },
-    { name: "Istanbul", code: "IST" },
-    { name: "Paris", code: "PRS" },
+    { label: "New York", value: "NY" },
+    { label: "Rome", value: "RM" },
+    { label: "London", value: "LDN" },
+    { label: "Istanbul", value: "IST" },
+    { label: "Paris", value: "PRS" },
   ];
 
   const countries = [
@@ -151,46 +150,16 @@ export default function PageDropdowns() {
       <H2>DropDown</H2>
       <Box>
         <Components>
-          <div>
             <Content>
               <h3>Basic</h3>
-              <Dropdown
-                value={selectedCities1}
+              <DropdownTeste
+                isSearchable
+                isMulti
+                placeHolder="Select..."
                 options={cities}
-                onChange={onCityChange}
-                optionLabel="name"
-                placeholder="Dropdown"
+                onChange={(value) => console.log(value)}
               />
             </Content>
-          </div>
-          <div>
-            <Content>
-              <h3>Custom</h3>
-              <Dropdown
-                value={selectedCities2}
-                options={cities}
-                onChange={onCityChange2}
-                placeholder="Dropdown"
-                optionLabel="name"
-                itemTemplate={selectedCountryTemplate}
-              />
-            </Content>
-          </div>
-          <div>
-            <Content>
-              <h3>CascadeSelect</h3>
-              <CascadeSelect
-                value={selectedCity1}
-                options={countries}
-                optionLabel={"cname"}
-                optionGroupLabel={"name"}
-                optionGroupChildren={["states", "cities"]}
-                placeholder="Cascade"
-                onChange={(event) => setSelectedCity1(event.value)}
-                itemTemplate={countryOptionTemplate}
-              />
-            </Content>
-          </div>
         </Components>
       </Box>
 
@@ -268,19 +237,19 @@ export default function PageDropdowns() {
                 <b>Type</b>
                 <b>Description</b>
               </TableRow>
-              <Line direction="horizontal"/>
+              <Line direction="horizontal" />
               <TableRow>
                 <div>value</div>
                 <div>object</div>
                 <div>item selected</div>
               </TableRow>
-              <Line direction="horizontal"/>
+              <Line direction="horizontal" />
               <TableRow>
                 <div>options</div>
                 <div>Array</div>
                 <div>list with items to be displayed in the dropdown</div>
               </TableRow>
-              <Line direction="horizontal"/>
+              <Line direction="horizontal" />
               <TableRow>
                 <div>placeholder</div>
                 <div>string</div>
@@ -299,7 +268,7 @@ export default function PageDropdowns() {
                 <b>Type</b>
                 <b>Parameters</b>
               </TableRow>
-              <Line direction="horizontal"/>
+              <Line direction="horizontal" />
               <TableRow>
                 <div>onChange</div>
                 <div>
