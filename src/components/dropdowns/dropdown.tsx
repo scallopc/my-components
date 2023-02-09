@@ -1,6 +1,6 @@
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./dp.scss";
+import "./dropdown.scss";
 import React, { useEffect, useRef, useState } from "react";
 import { faChevronDown, faSearch, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Container } from "./styles";
@@ -24,7 +24,7 @@ export function DropdownTeste({
   const [selectedValue, setSelectedValue] = useState<any>(isMulti ? [] : null);
   const [searchValue, setSearchValue] = useState("");
   const searchRef = useRef<any>();
-  const inputRef = useRef<any>();
+  const shoeMenuRef = useRef<any>();
 
   useEffect(() => {
     setSearchValue("");
@@ -35,7 +35,7 @@ export function DropdownTeste({
 
   useEffect(() => {
     const handler = (e) => {
-      if (inputRef.current && !inputRef.current?.contains(e.target)) {
+      if (shoeMenuRef.current && !shoeMenuRef.current?.contains(e.target)) {
         setShowMenu(false);
       }
     };
@@ -46,17 +46,13 @@ export function DropdownTeste({
     };
   });
 
-  const handleInputClick = (e) => {
-    setShowMenu(!showMenu);
-  };
-
   const getDisplay = () => {
     if (!selectedValue || selectedValue.length === 0) {
       return placeHolder;
     }
     if (isMulti) {
       return (
-        <div className="dropdown-tags">
+        <div className="dropdown-tags" onClick={(e) => e.stopPropagation()}>
           {selectedValue.map((option, i) => (
             <div key={i} className="dropdown-tag-item">
               {option.label}
@@ -85,7 +81,8 @@ export function DropdownTeste({
     onChange(newValue);
   };
 
-  const onItemClick = (option) => {
+  const onItemClick = (option) => {    
+    setShowMenu(false)
     let newValue;
     if (isMulti) {
       if (selectedValue.findIndex((o) => o.value === option.value) >= 0) {
@@ -113,6 +110,7 @@ export function DropdownTeste({
   };
 
   const onSearch = (e) => {
+    e.stopPropagation();
     setSearchValue(e.target.value);
   };
 
@@ -128,19 +126,17 @@ export function DropdownTeste({
   };
 
   return (
-    <Container>
-      <div ref={inputRef} onClick={handleInputClick} className="dropdown-input">
-        <div className="dropdown-selected-value">{getDisplay()}</div>
-        <div className="dropdown-tools">
-            <FontAwesomeIcon icon={faChevronDown} />
-        </div>
+    <div ref={shoeMenuRef} className="dropdown-container">
+      <div onClick={() => setShowMenu(!showMenu)} className="dropdown-input">
+        <span className="dropdown-selected-value">{getDisplay()}</span>
+            {showMenu ? <FontAwesomeIcon icon={faXmark} /> : <FontAwesomeIcon icon={faChevronDown} /> }
       </div>
       {showMenu && (
         <div className="dropdown-menu">
           {isSearchable && (
             <div className="search-box">
-              <input onChange={onSearch} value={searchValue} ref={searchRef} />
-              <FontAwesomeIcon icon={faSearch} />
+              <input onChange={onSearch} value={searchValue} />
+              <FontAwesomeIcon className="icon-search" icon={faSearch} />
             </div>
           )}
           {getOptions().map((option, i) => (
@@ -154,6 +150,6 @@ export function DropdownTeste({
           ))}
         </div>
       )}
-    </Container>
+    </div>
   );
 }

@@ -1,4 +1,5 @@
 import colors from "../colors";
+import { dropdownColorsDark } from "./componentColor/dropdown";
 
 const dark = {
   title: "dark",
@@ -144,6 +145,8 @@ const dark = {
       background: colors.badge.vdscBadgeIndeterminate,
     },
   },
+
+  ...dropdownColorsDark
 };
 
 export default dark;

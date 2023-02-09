@@ -160,6 +160,14 @@ export default function PageDropdowns() {
                 onChange={(value) => console.log(value)}
               />
             </Content>
+            <Content>
+              <h3>Basic</h3>
+              <DropdownTeste
+                placeHolder="Select..."
+                options={cities}
+                onChange={(value) => console.log(value)}
+              />
+            </Content>
         </Components>
       </Box>
 

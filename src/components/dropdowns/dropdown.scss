@@ -1,6 +1,10 @@
+$white: #fff;
+$LightLowColor: #ebebf0;
+$blueMediumColor: #5b8def;
+
 .dropdown-container {
   text-align: left;
-  border: 1px solid #eee;
+  border: 1px solid $LightLowColor;
   position: relative;
   border-radius: 5px;
   font-family: "Poppins";
@@ -13,17 +17,20 @@
   justify-content: space-between;
   user-select: none;
   cursor: pointer;
+  height: 40px;
+  padding: 8px 10px;
+
 }
 
 .dropdown-menu {
   position: absolute;
   transform: translateY(4px);
   width: 100%;
-  border: 1px solid #eee;
+  border: 1px solid $LightLowColor;
   border-radius: 5px;
   overflow: auto;
   max-height: 150px;
-  background-color: #fff;
+  background-color: $white;
   z-index: 99;
   padding: 10px;
 }
@@ -39,8 +46,8 @@
   }
 
   &.selected {
-    background-color: #0d6efd;
-    color: #fff;
+    background-color: $blueMediumColor;
+    color:  $white;
   }
 }
 
@@ -52,7 +59,9 @@
 }
 
 .dropdown-tag-item {
-  background-color: #ddd;
+  font-size: 12px;
+  background-color: $blueMediumColor;
+  color:  $white;
   padding: 2px 8px;
   border-radius: 4px;
   display: flex;
@@ -63,7 +72,7 @@
 .dropdown-tag-close {
   display: flex;
   align-items: center;
-cursor: pointer;
+  cursor: pointer;
 }
 
 .search-box {
@@ -81,7 +90,7 @@ cursor: pointer;
   outline: none;
   transition: ease-in-out 0.2s;
   font-family: "Poppins";
-  border: 1px solid #eee;
+  border: 1px solid $LightLowColor;
 
   input {
     box-sizing: border-box;
@@ -92,6 +101,10 @@ cursor: pointer;
     grid-column: 2;
     grid-row: 1;
     font-family: "Poppins";
-  font-size: 12px;
+    font-size: 12px;
+  }
+
+  .icon-search {
+    padding: 10px 0 10px 10px;
   }
 }
