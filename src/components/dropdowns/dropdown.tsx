@@ -2,13 +2,20 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./dropdown.scss";
 import React, { useEffect, useRef, useState } from "react";
-import { faChevronDown, faSearch, faXmark } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faSearch,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { Container } from "./styles";
+import Avatar from "../avatar/avatar";
 
 type IDropdown = {
   placeHolder: string;
   options: any;
-  isMulti?: any;
+  isMulti?: boolean;
+  image?: any;
+  avatar?: any;
   isSearchable?: boolean;
   onChange: (e) => void;
 };
@@ -19,7 +26,9 @@ export function DropdownTeste({
   isMulti,
   isSearchable,
   onChange,
-}:IDropdown) {
+  image,
+  avatar,
+}: IDropdown) {
   const [showMenu, setShowMenu] = useState(false);
   const [selectedValue, setSelectedValue] = useState<any>(isMulti ? [] : null);
   const [searchValue, setSearchValue] = useState("");
@@ -46,6 +55,27 @@ export function DropdownTeste({
     };
   });
 
+  const getDisplayImage = () => {
+    return (
+      <div>
+        <div className="dropdown-tag-item-image">
+          {image && (
+            <div className="image">
+              <img src={selectedValue.image} />
+            </div>
+          )}
+          {avatar && (
+            <div className="image">
+              <img className="avatar" src={selectedValue.image} />
+            </div>
+          )}
+
+          {selectedValue.label}
+        </div>
+      </div>
+    );
+  };
+
   const getDisplay = () => {
     if (!selectedValue || selectedValue.length === 0) {
       return placeHolder;
@@ -67,6 +97,9 @@ export function DropdownTeste({
         </div>
       );
     }
+    if (avatar || image) {
+      return getDisplayImage();
+    }
     return selectedValue?.label;
   };
 
@@ -81,8 +114,8 @@ export function DropdownTeste({
     onChange(newValue);
   };
 
-  const onItemClick = (option) => {    
-    setShowMenu(false)
+  const onItemClick = (option) => {
+    setShowMenu(false);
     let newValue;
     if (isMulti) {
       if (selectedValue.findIndex((o) => o.value === option.value) >= 0) {
@@ -129,7 +162,11 @@ export function DropdownTeste({
     <div ref={shoeMenuRef} className="dropdown-container">
       <div onClick={() => setShowMenu(!showMenu)} className="dropdown-input">
         <span className="dropdown-selected-value">{getDisplay()}</span>
-            {showMenu ? <FontAwesomeIcon icon={faXmark} /> : <FontAwesomeIcon icon={faChevronDown} /> }
+        {showMenu ? (
+          <FontAwesomeIcon icon={faXmark} />
+        ) : (
+          <FontAwesomeIcon icon={faChevronDown} />
+        )}
       </div>
       {showMenu && (
         <div className="dropdown-menu">
@@ -145,6 +182,16 @@ export function DropdownTeste({
               key={i}
               className={`dropdown-item ${isSelected(option) && "selected"}`}
             >
+              {image && (
+                <div className="image">
+                  <img src={option.image} />
+                </div>
+              )}
+              {avatar && (
+                <div className="image">
+                  <img className="avatar" src={option.image} />
+                </div>
+              )}
               {option.label}
             </div>
           ))}

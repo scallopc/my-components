@@ -33,7 +33,15 @@ export default function PageDropdowns() {
   };
 
   const cities = [
-    { label: "New York", value: "NY" },
+    { label: "New York", value: "NY", image:"https://avatars.githubusercontent.com/u/39253660?v=4" },
+    { label: "Rome", value: "RM", image:"https://avatars.githubusercontent.com/u/39253660?v=4" },
+    { label: "London", value: "LDN", image:"https://avatars.githubusercontent.com/u/39253660?v=4" },
+    { label: "Istanbul", value: "IST", image:"https://avatars.githubusercontent.com/u/39253660?v=4" },
+    { label: "Paris", value: "PRS", image:"https://avatars.githubusercontent.com/u/39253660?v=4" },
+  ];
+
+  const citiesIcones = [
+    { label: "New York", value: "NY", icon:"fa-solid fa-user" },
     { label: "Rome", value: "RM" },
     { label: "London", value: "LDN" },
     { label: "Istanbul", value: "IST" },
@@ -122,7 +130,7 @@ export default function PageDropdowns() {
           className="country-item country-item-value"
           style={{ display: "flex", justifyContent: "space-between" }}
         >
-          <div>{option.name}</div>
+          <div>{option.label}</div>
           <FontAwesomeIcon icon={faFlag} />
         </div>
       );
@@ -151,7 +159,7 @@ export default function PageDropdowns() {
       <Box>
         <Components>
             <Content>
-              <h3>Basic</h3>
+              <h3>chip</h3>
               <DropdownTeste
                 isSearchable
                 isMulti
@@ -166,6 +174,25 @@ export default function PageDropdowns() {
                 placeHolder="Select..."
                 options={cities}
                 onChange={(value) => console.log(value)}
+              />
+            </Content>
+            <Content>
+              <h3>Image</h3>
+              <DropdownTeste
+                placeHolder="Select..."
+                options={cities}
+                onChange={(value) => console.log(value)}
+                image
+              />
+            </Content>
+            <Content>
+              <h3>Icon</h3>
+              <i className="fa-regular fa-flag" />
+              <DropdownTeste
+                placeHolder="Select..."
+                options={cities}
+                onChange={(value) => console.log(value)}
+                image
               />
             </Content>
         </Components>
