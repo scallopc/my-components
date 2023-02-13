@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { faFlag } from "@fortawesome/free-solid-svg-icons";
 import {
   Container,
   Box,
@@ -15,22 +13,10 @@ import {
   Link,
 } from "../styles";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Line from "../../components/line/line";
-import { DropdownTeste } from "../../components/dropdowns/dropdown";
+import { Dropdown } from "../../components/dropdowns/dropdown";
 
 export default function PageDropdowns() {
-  const [selectedCities1, setSelectedCities1] = useState(null);
-  const [selectedCities2, setSelectedCities2] = useState(null);
-  const [selectedCity1, setSelectedCity1] = useState(null);
-
-  const onCityChange = (e) => {
-    setSelectedCities1(e.value);
-  };
-
-  const onCityChange2 = (e) => {
-    setSelectedCities2(e.value);
-  };
 
   const cities = [
     { label: "New York", value: "NY", image:"https://avatars.githubusercontent.com/u/39253660?v=4" },
@@ -48,110 +34,6 @@ export default function PageDropdowns() {
     { label: "Paris", value: "PRS" },
   ];
 
-  const countries = [
-    {
-      name: "Australia",
-      code: "AU",
-      states: [
-        {
-          name: "New South Wales",
-          cities: [
-            { cname: "Sydney", code: "A-SY" },
-            { cname: "Newcastle", code: "A-NE" },
-            { cname: "Wollongong", code: "A-WO" },
-          ],
-        },
-        {
-          name: "Queensland",
-          cities: [
-            { cname: "Brisbane", code: "A-BR" },
-            { cname: "Townsville", code: "A-TO" },
-          ],
-        },
-      ],
-    },
-    {
-      name: "Canada",
-      code: "CA",
-      states: [
-        {
-          name: "Quebec",
-          cities: [
-            { cname: "Montreal", code: "C-MO" },
-            { cname: "Quebec City", code: "C-QU" },
-          ],
-        },
-        {
-          name: "Ontario",
-          cities: [
-            { cname: "Ottawa", code: "C-OT" },
-            { cname: "Toronto", code: "C-TO" },
-          ],
-        },
-      ],
-    },
-    {
-      name: "United States",
-      code: "US",
-      states: [
-        {
-          name: "California",
-          cities: [
-            { cname: "Los Angeles", code: "US-LA" },
-            { cname: "San Diego", code: "US-SD" },
-            { cname: "San Francisco", code: "US-SF" },
-          ],
-        },
-        {
-          name: "Florida",
-          cities: [
-            { cname: "Jacksonville", code: "US-JA" },
-            { cname: "Miami", code: "US-MI" },
-            { cname: "Tampa", code: "US-TA" },
-            { cname: "Orlando", code: "US-OR" },
-          ],
-        },
-        {
-          name: "Texas",
-          cities: [
-            { cname: "Austin", code: "US-AU" },
-            { cname: "Dallas", code: "US-DA" },
-            { cname: "Houston", code: "US-HO" },
-          ],
-        },
-      ],
-    },
-  ];
-
-  const selectedCountryTemplate: any = (option: any, props: any) => {
-    if (option) {
-      return (
-        <div
-          className="country-item country-item-value"
-          style={{ display: "flex", justifyContent: "space-between" }}
-        >
-          <div>{option.label}</div>
-          <FontAwesomeIcon icon={faFlag} />
-        </div>
-      );
-    }
-
-    return <span>{props.placeholder}</span>;
-  };
-
-  const countryOptionTemplate = (option) => {
-    return (
-      <div
-        className="country-item"
-        style={{ display: "flex", justifyContent: "space-between" }}
-      >
-        {option.states && <i className="pi pi-map-marker mr-2" />}
-        {option.cities && <i className="pi pi-compass mr-2" />}
-        {option.cname && <i className="pi pi-map-marker mr-2" />}
-        <span>{option.cname || option.name}</span>
-      </div>
-    );
-  };
 
   return (
     <Container>
@@ -160,7 +42,7 @@ export default function PageDropdowns() {
         <Components>
             <Content>
               <h3>chip</h3>
-              <DropdownTeste
+              <Dropdown
                 isSearchable
                 isMulti
                 placeHolder="Select..."
@@ -170,7 +52,7 @@ export default function PageDropdowns() {
             </Content>
             <Content>
               <h3>Basic</h3>
-              <DropdownTeste
+              <Dropdown
                 placeHolder="Select..."
                 options={cities}
                 onChange={(value) => console.log(value)}
@@ -178,21 +60,22 @@ export default function PageDropdowns() {
             </Content>
             <Content>
               <h3>Image</h3>
-              <DropdownTeste
+              <Dropdown
                 placeHolder="Select..."
                 options={cities}
                 onChange={(value) => console.log(value)}
-                image
+                isImage
+                
               />
             </Content>
             <Content>
               <h3>Icon</h3>
               <i className="fa-regular fa-flag" />
-              <DropdownTeste
+              <Dropdown
                 placeHolder="Select..."
-                options={cities}
+                options={citiesIcones}
                 onChange={(value) => console.log(value)}
-                image
+                
               />
             </Content>
         </Components>

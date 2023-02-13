@@ -112,12 +112,11 @@ $blueMediumColor: #5b8def;
 }
 
 .image {
+  display: flex;
   img {
+    border-radius: 30px;
     width: 25px;
     height: 25px;
-  }
-  .avatar {
-    border-radius: 30px;
   }
 }
 

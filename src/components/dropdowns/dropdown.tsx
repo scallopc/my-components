@@ -8,26 +8,25 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { Container } from "./styles";
-import Avatar from "../avatar/avatar";
 
 type IDropdown = {
   placeHolder: string;
   options: any;
   isMulti?: boolean;
-  image?: any;
-  avatar?: any;
+  isImage?: any;
+  isIcon?: any;
   isSearchable?: boolean;
   onChange: (e) => void;
 };
 
-export function DropdownTeste({
+export function Dropdown({
   placeHolder,
   options,
   isMulti,
   isSearchable,
   onChange,
-  image,
-  avatar,
+  isImage,
+  isIcon
 }: IDropdown) {
   const [showMenu, setShowMenu] = useState(false);
   const [selectedValue, setSelectedValue] = useState<any>(isMulti ? [] : null);
@@ -59,45 +58,49 @@ export function DropdownTeste({
     return (
       <div>
         <div className="dropdown-tag-item-image">
-          {image && (
+          {selectedValue.image && (
             <div className="image">
               <img src={selectedValue.image} />
             </div>
           )}
-          {avatar && (
-            <div className="image">
-              <img className="avatar" src={selectedValue.image} />
-            </div>
-          )}
-
+        
           {selectedValue.label}
         </div>
       </div>
     );
   };
 
+const getDisplayMulti = () => {
+  return (
+    <div className="dropdown-tags" onClick={(e) => e.stopPropagation()}>
+      {selectedValue?.map((option, i) => (
+        <div key={i} className="dropdown-tag-item">
+          {option.image && (
+            <div className="image">
+              <img src={option.image} />
+            </div>
+          )}
+          {option.label}
+          <span
+            onClick={(e) => onTagRemove(e, option)}
+            className="dropdown-tag-close"
+          >
+            <FontAwesomeIcon className="xmark" icon={faXmark} />
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+ }
+
   const getDisplay = () => {
     if (!selectedValue || selectedValue.length === 0) {
       return placeHolder;
     }
     if (isMulti) {
-      return (
-        <div className="dropdown-tags" onClick={(e) => e.stopPropagation()}>
-          {selectedValue.map((option, i) => (
-            <div key={i} className="dropdown-tag-item">
-              {option.label}
-              <span
-                onClick={(e) => onTagRemove(e, option)}
-                className="dropdown-tag-close"
-              >
-                <FontAwesomeIcon className="xmark" icon={faXmark} />
-              </span>
-            </div>
-          ))}
-        </div>
-      );
+     return getDisplayMulti()
     }
-    if (avatar || image) {
+    if (isImage) {
       return getDisplayImage();
     }
     return selectedValue?.label;
@@ -182,16 +185,12 @@ export function DropdownTeste({
               key={i}
               className={`dropdown-item ${isSelected(option) && "selected"}`}
             >
-              {image && (
+              {option.image && (
                 <div className="image">
                   <img src={option.image} />
                 </div>
               )}
-              {avatar && (
-                <div className="image">
-                  <img className="avatar" src={option.image} />
-                </div>
-              )}
+              {option.icon &&  <i className={option.icon}></i>}
               {option.label}
             </div>
           ))}
