@@ -1,7 +1,7 @@
 import { IButton } from "./button";
 import styled, { css } from "styled-components";
 
-const ButtonVariant:any = {
+const typeButton: any = {
   primary: css`
     color: ${(props) => props.theme.button.colorBtnPrimary};
     background-color: ${(props) => props.theme.button.bgBtnPrimary};
@@ -53,6 +53,24 @@ const ButtonVariant:any = {
   `,
 };
 
+const sizeButton: any = {
+  small: css`
+    padding: 6px 24px;
+    height: 24px;
+    font-size: 10px;
+  `,
+  medium: css`
+    padding: 8px 24px;
+    height: 32px;
+    font-size: 12px;
+  `,
+  large: css`
+    padding: 6px 24px;
+    height: 40px;
+    font-size: 14px;
+  `,
+};
+
 const disabled = css`
   cursor: not-allowed;
   background: ${(props) => props.theme.button.bgBtnDisabled};
@@ -75,25 +93,11 @@ export const Container = styled.button<IButton>`
   letter-spacing: 0.2px;
   border-radius: 4px;
   width: fit-content;
-  padding: ${(props) =>
-      props.size === "small" ? "6px" : props.size === "medium" ? "8px" : "10px"}
-    24px;
-  height: ${(props) =>
-    props.size === "small"
-      ? "24px"
-      : props.size === "medium"
-      ? "32px"
-      : "40px"};
   cursor: pointer;
   outline: none;
   transition: all 0.2s;
-  font-size: ${(props) =>
-    props.size === "small"
-      ? "10px"
-      : props.size === "medium"
-      ? "12px"
-      : "14px"};
-  ${(props) => props.variant && ButtonVariant[props.variant]}
+  ${(props) => props.type && typeButton[props.type]}
+  ${(props) => props.size && sizeButton[props.size]}
   ${(props) => props.disabled && disabled}
 `;
 

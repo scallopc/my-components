@@ -26,7 +26,7 @@ export default function PageButtons() {
   return (
     <Container>
       <H2>Botões</H2>
-      <Box>
+      {/* <Box>
         <h3>Com ícones / sem ícones</h3>
         <Components>
           <div>
@@ -76,12 +76,12 @@ export default function PageButtons() {
             </Content>
           </div>
         </Components>
-      </Box>
+      </Box> */}
 
       <Box>
         <H5>Documentation</H5>
         <DocumentationContainer>
-          <p>Templates</p>
+          {/* <p>Templates</p>
           <SmallDetail>
             Pagination has two modes; "Label", "Icon" and "Image".
           </SmallDetail>
@@ -126,9 +126,35 @@ export default function PageButtons() {
                 {disabled}
               </Detail>
             </Components>
+          </Content> */}
+          <SmallDetail>O que é o component</SmallDetail>
+          <Content>
+            <h3>Basic primary</h3>
+            <SmallDetail>
+              It is with the label property, showing only the user's initials.
+            </SmallDetail>
+            <SmallDetail><code>{primary}</code></SmallDetail>
+            <div className="flex align-items-center gap-3">
+              <Button outline small label="Pequeno" />
+              {/* <Button variant="primary" size="medium" label="Médio" />
+              <Button variant="primary" size="medium" label="Grande" /> */}
+            </div>
           </Content>
-          <br />
 
+          <Content>
+            <h3>Basic outline</h3>
+            <SmallDetail>
+            Outline buttons display a border without a background initially.
+            </SmallDetail>
+            <SmallDetail><code>{primary}</code></SmallDetail>
+            <div className="flex align-items-center gap-3">
+           <Button outline size="small" label="Pequeno" />
+              <Button outline size="medium" label="Médio" />
+              <Button outline size="medium" label="Grande" /> 
+            </div>
+          </Content>
+
+          <br />
           <p>Properties </p>
           <SmallDetail>
             We use some attributes to compose the component

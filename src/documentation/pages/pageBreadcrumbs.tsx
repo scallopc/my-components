@@ -24,55 +24,36 @@ const ContentToggle = styled.div`
 `;
 
 export default function pageBreadcrumbs() {
-  const breadcrumbs = '<Breadcrumbs />'
+  const breadcrumbs = "<Breadcrumbs />";
   return (
     <Container>
       <H2>Breadcrumbs</H2>
-
       <Box>
         <H5>Documentation</H5>
         <DocumentationContainer>
-          <p>Breadcrumb</p>
-          {/* <Components>
-            <Content>
-              <ContentToggle>
-               {breadcrumbs}
-              </ContentToggle>
-            </Content>
-          </Components> */}
-
+          <SmallDetail>
+            Shows contextual information about the page hierarchy.
+          </SmallDetail>
           <Content>
-            <Components>
-              <Detail>
-              {breadcrumbs}
-              </Detail>
-            </Components>
+            <h3>Basic</h3>
+            <SmallDetail>
+              <code>{breadcrumbs}</code>
+            </SmallDetail>
+            <Breadcrumbs />
           </Content>
           <br />
 
-          <p>Breadcrumb route to home</p>
-          <Components>
-            <Content>
-              <ContentToggle>
-                <Breadcrumbs
-                  home={true}
-                  homeLink="#/home"
-                  homeName={"Início"}
-                />
-              </ContentToggle>
-            </Content>
-          </Components>
-
           <Content>
-            <Components>
-              <Detail>
-                <code>
-                  &lt;Breadcrumbs home<code>&#123;</code>true<code>&#125;</code>{" "}
-                  homeLink=<code>&#123;</code>'topology/demo'<code>&#125;</code>{" "}
-                  homeName=<code>&#123;</code>'Início'<code>&#125;</code>/&gt;
-                </code>
-              </Detail>
-            </Components>
+            <h3>Breadcrumb route to home</h3>
+            <Breadcrumbs home={true} homeLink="#/home" homeName={"Início"} />
+
+            <SmallDetail>
+              <code>
+                &lt;Breadcrumbs home<code>&#123;</code>true<code>&#125;</code>{" "}
+                homeLink=<code>&#123;</code>'topology/demo'<code>&#125;</code>{" "}
+                homeName=<code>&#123;</code>'Início'<code>&#125;</code>/&gt;
+              </code>
+            </SmallDetail>
           </Content>
           <br />
 
@@ -85,19 +66,19 @@ export default function pageBreadcrumbs() {
                 <b>Type</b>
                 <b>Description</b>
               </TableRow>
-              <Line direction="horizontal"/>
+              <Line direction="horizontal" />
               <TableRow>
                 <div>home</div>
                 <div>boolean</div>
                 <div>Define if the component will have a home</div>
               </TableRow>
-              <Line direction="horizontal"/>
+              <Line direction="horizontal" />
               <TableRow>
                 <div>homeLink</div>
                 <div>string </div>
                 <div>Set the home route</div>
               </TableRow>
-              <Line direction="horizontal"/>
+              <Line direction="horizontal" />
               <TableRow>
                 <div>homeName</div>
                 <div>string </div>

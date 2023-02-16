@@ -1,9 +1,7 @@
 import {
   Box,
-  Components,
   Container,
   Content,
-  Detail,
   DocumentationContainer,
   H2,
   H5,
@@ -29,11 +27,11 @@ export default function PageAvatars() {
 
   return (
     <Container>
-      <H2>Avatar</H2>
+      <H2>Nome do component</H2>
       <Box>
         <H5>Documentation</H5>
         <DocumentationContainer>
-          <SmallDetail>Avatar represents people using icons, labels and images.</SmallDetail>
+          <SmallDetail>O que é o component</SmallDetail>
           <Content>
             <h3>Label</h3>
             <SmallDetail>
@@ -45,73 +43,6 @@ export default function PageAvatars() {
                 <Avatar size="small" label="JC" />
                 <Avatar size="medium" label="JC" />
                 <Avatar size="large" label="JC" />
-              </ContentAvatars>
-            </div>
-          </Content>
-
-          <Content>
-            <h3>Icon</h3>
-            <SmallDetail>
-              It is set with the icon property, showing only one icon as user
-              image.
-            </SmallDetail>
-            <SmallDetail><code>{icon}</code></SmallDetail>
-            <div className="flex">
-              <ContentAvatars>
-                <Avatar size="small" />
-                <Avatar size="medium" />
-                <Avatar size="large" />
-              </ContentAvatars>
-            </div>
-          </Content>
-
-          <Content>
-            <h3>Image</h3>
-            <SmallDetail>
-              It is set with the image property, showing an image of the user.
-            </SmallDetail>
-            <SmallDetail><code>{image}</code></SmallDetail>
-            <div className="flex">
-              <ContentAvatars>
-                <Avatar
-                  size="medium"
-                  image="https://avatars.githubusercontent.com/u/39253660?v=4"
-                />
-                <Avatar
-                  size="medium"
-                  image="https://avatars.githubusercontent.com/u/39253660?v=4"
-                />
-                <Avatar
-                  size="large"
-                  image="https://avatars.githubusercontent.com/u/39253660?v=4"
-                />
-              </ContentAvatars>
-            </div>
-          </Content>
-
-          <Content>
-            <h3>Active</h3>
-            <SmallDetail>
-              It is set with the image property, showing an image of the user.
-            </SmallDetail>
-            <SmallDetail><code>{active}</code></SmallDetail>
-            <div className="flex">
-              <ContentAvatars>
-                <Avatar
-                  size="small"
-                  image="https://avatars.githubusercontent.com/u/39253660?v=4"
-                  active="on"
-                />
-                <Avatar
-                  size="medium"
-                  image="https://avatars.githubusercontent.com/u/39253660?v=4"
-                  active="on"
-                />
-                <Avatar
-                  size="medium"
-                  label="JC"
-                  active="off"
-                />
               </ContentAvatars>
             </div>
           </Content>

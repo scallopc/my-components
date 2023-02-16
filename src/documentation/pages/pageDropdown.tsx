@@ -64,13 +64,11 @@ export default function PageDropdowns() {
                 placeHolder="Select..."
                 options={cities}
                 onChange={(value) => console.log(value)}
-                isImage
-                
+                isMulti
               />
             </Content>
             <Content>
               <h3>Icon</h3>
-              <i className="fa-regular fa-flag" />
               <Dropdown
                 placeHolder="Select..."
                 options={citiesIcones}

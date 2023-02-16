@@ -100,9 +100,9 @@ const getDisplayMulti = () => {
     if (isMulti) {
      return getDisplayMulti()
     }
-    if (isImage) {
-      return getDisplayImage();
-    }
+    // if (isImage) {
+    //   return getDisplayImage();
+    // }
     return selectedValue?.label;
   };
 
