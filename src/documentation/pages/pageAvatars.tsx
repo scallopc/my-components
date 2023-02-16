@@ -33,13 +33,13 @@ export default function PageAvatars() {
       <Box>
         <H5>Documentation</H5>
         <DocumentationContainer>
-          <SmallDetail>Avatar represents people using icons, labels and images.</SmallDetail>
+          <p>Avatar represents people using icons, labels and images.</p>
           <Content>
             <h3>Label</h3>
             <SmallDetail>
               It is with the label property, showing only the user's initials.
             </SmallDetail>
-            <SmallDetail><code>{label}</code></SmallDetail>
+            <Detail>{label}</Detail>
             <div className="flex">
               <ContentAvatars>
                 <Avatar size="small" label="JC" />
@@ -55,7 +55,7 @@ export default function PageAvatars() {
               It is set with the icon property, showing only one icon as user
               image.
             </SmallDetail>
-            <SmallDetail><code>{icon}</code></SmallDetail>
+            <Detail>{icon}</Detail>
             <div className="flex">
               <ContentAvatars>
                 <Avatar size="small" />
@@ -70,7 +70,7 @@ export default function PageAvatars() {
             <SmallDetail>
               It is set with the image property, showing an image of the user.
             </SmallDetail>
-            <SmallDetail><code>{image}</code></SmallDetail>
+            <Detail>{image}</Detail>
             <div className="flex">
               <ContentAvatars>
                 <Avatar
@@ -91,10 +91,8 @@ export default function PageAvatars() {
 
           <Content>
             <h3>Active</h3>
-            <SmallDetail>
-              It is set with the image property, showing an image of the user.
-            </SmallDetail>
-            <SmallDetail><code>{active}</code></SmallDetail>
+
+            <Detail>{active}</Detail>
             <div className="flex">
               <ContentAvatars>
                 <Avatar
@@ -107,19 +105,17 @@ export default function PageAvatars() {
                   image="https://avatars.githubusercontent.com/u/39253660?v=4"
                   active="on"
                 />
-                <Avatar
-                  size="medium"
-                  label="JC"
-                  active="off"
-                />
+                <Avatar size="medium" label="JC" active="off" />
               </ContentAvatars>
             </div>
           </Content>
 
           <br />
-          <p>Properties </p>
-          <SmallDetail>Use this attribute to compose the component</SmallDetail>
           <Content>
+            <h3>Properties </h3>
+            <SmallDetail>
+              Use this attribute to compose the component
+            </SmallDetail>
             <Table>
               <TableRow>
                 <b>Name</b>
