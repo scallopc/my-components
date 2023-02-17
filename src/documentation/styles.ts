@@ -17,6 +17,9 @@ export const H2 = styled.h2<any>`
 
 export const Detail = styled.div<any>`
   color: ${(props) => props.theme.default.colorAlternative2};
+  font-size: 12px;
+  line-height: 2;
+  word-spacing: 5px;
 `;
 
 export const Link = styled.a`
