@@ -16,6 +16,7 @@ export type IButton = {
   small?: boolean;
   large?: boolean;
   medium?: boolean;
+  variant?: "primary" | "outline" | "text" | "danger";
 };
 
 export default function Button({
@@ -31,74 +32,61 @@ export default function Button({
   small,
   large,
   primary,
+  variant
 }: IButton) {
-  const handleSizeButton = () => {
-    return (
-      <>
-        {/* switch (size) {
-      case small:
-        return (size = "small");
-      case large:
-        return (size = "large");
-      default:
-        size = "medium";
-    } */}
-        {small
-          ? (size = "small")
-          : large
-          ? (size = "large")
-          : (size = "medium")}
-      </>
-    );
-  };
 
-  const handleTypeButton = () => {
-    return (
-      <div>
-        {outline ? (
-          <Container
-            type="outline"
-            size={handleSizeButton}
-            disabled={disabled}
-            onClick={onClick}
-          >
-            <i className={icon} />
-            <Span>{label}</Span>
-          </Container>
-        ) : text ? (
-          <Container
-            type="text"
-            size={handleSizeButton()}
-            disabled={disabled}
-            onClick={onClick}
-          >
-            <i className={icon} />
-            <Span>{label}</Span>
-          </Container>
-        ) : danger ? (
-          <Container
-            type="danger"
-            size={handleSizeButton()}
-            disabled={disabled}
-            onClick={onClick}
-          >
-            <i className={icon} />
-            <Span>{label}</Span>
-          </Container>
-        ) : (
-          <Container
-            type="primary"
-            size={handleSizeButton()}
-            disabled={disabled}
-            onClick={onClick}
-          >
-            <i className={icon} />
-            <Span>{label}</Span>
-          </Container>
-        )}
-      </div>
-    );
-  };
+  // const handleTypeButton = () => {
+  //   return (
+  //     <div>
+  //       {outline ? (
+  //         <Container
+  //           type="outline"
+  //           size={handleSizeButton}
+  //           disabled={disabled}
+  //           onClick={onClick}
+  //         >
+  //           <i className={icon} />
+  //           <Span>{label}</Span>
+  //         </Container>
+  //       ) : text ? (
+  //         <Container
+  //           type="text"
+  //           size={handleSizeButton()}
+  //           disabled={disabled}
+  //           onClick={onClick}
+  //         >
+  //           <i className={icon} />
+  //           <Span>{label}</Span>
+  //         </Container>
+  //       ) : danger ? (
+  //         <Container
+  //           type="danger"
+  //           size={handleSizeButton()}
+  //           disabled={disabled}
+  //           onClick={onClick}
+  //         >
+  //           <i className={icon} />
+  //           <Span>{label}</Span>
+  //         </Container>
+  //       ) : (
+  //         <Container
+  //           type="primary"
+  //           size={handleSizeButton()}
+  //           disabled={disabled}
+  //           onClick={onClick}
+  //         >
+  //           <i className={icon} />
+  //           <Span>{label}</Span>
+  //         </Container>
+  //       )}
+  //     </div>
+  //   );
+  // };
 
-  return handleTypeButton();
+  return (
+    <Container variant={variant} size={size} disabled={disabled} onClick={onClick}>
+      <i className={icon} />
+      <Span>{label}</Span>
+    </Container>
+  );
 }

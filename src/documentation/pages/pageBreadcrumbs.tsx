@@ -10,7 +10,6 @@ import {
   Table,
   TableRow,
 } from "../styles";
-import styled from "styled-components";
 import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
 import Line from "../../components/line/line";
 

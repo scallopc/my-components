@@ -15,10 +15,10 @@ export default function MenuLateral() {
           <MenuRoutes title="Breadcrumb" to='/breadcrumb' />
           <MenuRoutes title="Button" to='/button' />
           <MenuRoutes title="Cards" to='/cards' />
-          <MenuRoutes title="Dropdown" to='/dropdown' />
-          <MenuRoutes title="Heading" to='/heading' />
           <MenuRoutes title="ColorPicker" to='/color-picker' />
           <MenuRoutes title="Colors" to='/colors' />
+          <MenuRoutes title="Dropdown" to='/dropdown' />
+          <MenuRoutes title="Heading" to='/heading' />
           <MenuRoutes title="Inputs" to='/inputs' />
           <MenuRoutes title="Line" to='/line' />
           <MenuRoutes title="List" to='/list' />
