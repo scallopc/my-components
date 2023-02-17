@@ -1,6 +1,5 @@
 import {
   Box,
-  Components,
   Container,
   Content,
   Detail,
@@ -14,12 +13,6 @@ import {
 import styled from "styled-components";
 import Avatar from "../../components/avatar/avatar";
 import Line from "../../components/line/line";
-
-const ContentAvatars = styled.div`
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-`;
 
 export default function PageAvatars() {
   const label = '<Avatar size="small" label="JC" />';
@@ -40,12 +33,10 @@ export default function PageAvatars() {
               It is with the label property, showing only the user's initials.
             </SmallDetail>
             <Detail>{label}</Detail>
-            <div className="flex">
-              <ContentAvatars>
-                <Avatar size="small" label="JC" />
-                <Avatar size="medium" label="JC" />
-                <Avatar size="large" label="JC" />
-              </ContentAvatars>
+            <div className="flex align-items-center gap-2">
+              <Avatar size="small" label="JC" />
+              <Avatar size="medium" label="JC" />
+              <Avatar size="large" label="JC" />
             </div>
           </Content>
 
@@ -56,12 +47,10 @@ export default function PageAvatars() {
               image.
             </SmallDetail>
             <Detail>{icon}</Detail>
-            <div className="flex">
-              <ContentAvatars>
-                <Avatar size="small" />
-                <Avatar size="medium" />
-                <Avatar size="large" />
-              </ContentAvatars>
+            <div className="flex align-items-center gap-2">
+              <Avatar size="small" />
+              <Avatar size="medium" />
+              <Avatar size="large" />
             </div>
           </Content>
 
@@ -71,21 +60,19 @@ export default function PageAvatars() {
               It is set with the image property, showing an image of the user.
             </SmallDetail>
             <Detail>{image}</Detail>
-            <div className="flex">
-              <ContentAvatars>
-                <Avatar
-                  size="medium"
-                  image="https://avatars.githubusercontent.com/u/39253660?v=4"
-                />
-                <Avatar
-                  size="medium"
-                  image="https://avatars.githubusercontent.com/u/39253660?v=4"
-                />
-                <Avatar
-                  size="large"
-                  image="https://avatars.githubusercontent.com/u/39253660?v=4"
-                />
-              </ContentAvatars>
+            <div className="flex align-items-center gap-2">
+              <Avatar
+                size="small"
+                image="https://avatars.githubusercontent.com/u/39253660?v=4"
+              />
+              <Avatar
+                size="medium"
+                image="https://avatars.githubusercontent.com/u/39253660?v=4"
+              />
+              <Avatar
+                size="large"
+                image="https://avatars.githubusercontent.com/u/39253660?v=4"
+              />
             </div>
           </Content>
 
@@ -93,20 +80,17 @@ export default function PageAvatars() {
             <h3>Active</h3>
 
             <Detail>{active}</Detail>
-            <div className="flex">
-              <ContentAvatars>
-                <Avatar
-                  size="small"
-                  image="https://avatars.githubusercontent.com/u/39253660?v=4"
-                  active="on"
-                />
-                <Avatar
-                  size="medium"
-                  image="https://avatars.githubusercontent.com/u/39253660?v=4"
-                  active="on"
-                />
-                <Avatar size="medium" label="JC" active="off" />
-              </ContentAvatars>
+            <div className="flex align-items-center gap-2">
+              <Avatar
+                size="medium"
+                image="https://avatars.githubusercontent.com/u/39253660?v=4"
+                active="on"
+              />
+              <Avatar
+                size="medium"
+                active="on"
+              />
+              <Avatar size="medium" label="JC" active="off" />
             </div>
           </Content>
 

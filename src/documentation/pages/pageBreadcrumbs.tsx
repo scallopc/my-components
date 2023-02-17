@@ -1,13 +1,11 @@
 import {
   Box,
-  Components,
   Container,
   Content,
   Detail,
   DocumentationContainer,
   H2,
   H5,
-  Link,
   SmallDetail,
   Table,
   TableRow,
@@ -15,13 +13,6 @@ import {
 import styled from "styled-components";
 import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
 import Line from "../../components/line/line";
-
-const ContentToggle = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-`;
 
 export default function pageBreadcrumbs() {
   const breadcrumbs = "<Breadcrumbs />";
@@ -31,14 +22,10 @@ export default function pageBreadcrumbs() {
       <Box>
         <H5>Documentation</H5>
         <DocumentationContainer>
-          <SmallDetail>
-            Shows contextual information about the page hierarchy.
-          </SmallDetail>
+          <p>Shows contextual information about the page hierarchy.</p>
           <Content>
             <h3>Basic</h3>
-            <SmallDetail>
-              <code>{breadcrumbs}</code>
-            </SmallDetail>
+            <Detail>{breadcrumbs}</Detail>
             <Breadcrumbs />
           </Content>
           <br />
@@ -47,19 +34,19 @@ export default function pageBreadcrumbs() {
             <h3>Breadcrumb route to home</h3>
             <Breadcrumbs home={true} homeLink="#/home" homeName={"Início"} />
 
-            <SmallDetail>
+            <Detail>
               <code>
                 &lt;Breadcrumbs home<code>&#123;</code>true<code>&#125;</code>{" "}
                 homeLink=<code>&#123;</code>'topology/demo'<code>&#125;</code>{" "}
                 homeName=<code>&#123;</code>'Início'<code>&#125;</code>/&gt;
               </code>
-            </SmallDetail>
+            </Detail>
           </Content>
           <br />
 
-          <p>Properties </p>
-          <SmallDetail>Properties used here</SmallDetail>
           <Content>
+            <h3>Properties </h3>
+            <SmallDetail>Properties used here</SmallDetail>
             <Table>
               <TableRow>
                 <b>Name</b>
