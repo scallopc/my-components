@@ -3,7 +3,6 @@ import Button from "../../components/button/button";
 import Line from "../../components/line/line";
 import {
   Box,
-  Components,
   Container,
   Content,
   Detail,
@@ -25,141 +24,82 @@ export default function PageButtons() {
 
   return (
     <Container>
-      <H2>Botões</H2>
-      {/* <Box>
-        <h3>Com ícones / sem ícones</h3>
-        <Components>
-          <div>
-            <Content>
-              <Button variant="primary" size="small" label="Pequeno" />
-              <Button variant="primary" size="medium" label="Médio" />
-              <Button variant="primary" size="medium" label="Grande" />
-            </Content>
-          </div>
-          <div>
-            <Content>
-              <Button variant="outline" size="small" label="Pequeno" />
-              <Button variant="outline" size="medium" label="Médio" />
-              <Button variant="outline" size="medium" label="Grande" />
-            </Content>
-          </div>
-          <div>
-            <Content>
-              <Button
-                variant="primary"
-                size="small"
-                label="Desabilitado"
-                disabled
-              />
-              <Button
-                variant="text"
-                size="small"
-                label="Pequeno"
-                icon="fa-regular fa-plus"
-              />
-            </Content>
-          </div>
-          <div>
-            <Content>
-              <Button
-                variant="primary"
-                size="small"
-                label="Pequeno"
-                icon="fa-regular fa-circle-notch"
-              />
-              <Button
-                variant="text"
-                size="small"
-                label="Pequeno"
-                icon="fa-regular fa-check"
-              />
-            </Content>
-          </div>
-        </Components>
-      </Box> */}
-
+      <H2>Button</H2>
       <Box>
         <H5>Documentation</H5>
         <DocumentationContainer>
-          {/* <p>Templates</p>
-          <SmallDetail>
-            Pagination has two modes; "Label", "Icon" and "Image".
-          </SmallDetail>
           <Content>
-            <Components>
-              <Detail>
-              {primary}
-              </Detail>
-            </Components>
-            <Components>
-              <Detail>
-              {outline}
-              </Detail>
-            </Components>
-            <Components>
-              <Detail>
-              {text}
-              </Detail>
-            </Components>
-          </Content>
-          <br />
-
-          <p>Button icon</p>
-          <SmallDetail>
-            To display only an icon, leave children as undefined. The library
-            used for icons is"FontAwesomeIcon"
-          </SmallDetail>
-          <Content>
-            <Components>
-              <Detail>
-                {textIcon}
-              </Detail>
-            </Components>
-          </Content>
-          <br />
-
-          <p>Button disabled</p>
-          <SmallDetail>To set the button as disabled</SmallDetail>
-          <Content>
-            <Components>
-              <Detail>
-                {disabled}
-              </Detail>
-            </Components>
-          </Content> */}
-          <SmallDetail>O que é o component</SmallDetail>
-          <Content>
-            <h3>Basic primary</h3>
-            <SmallDetail>
-              It is with the label property, showing only the user's initials.
-            </SmallDetail>
-            <SmallDetail><code>{primary}</code></SmallDetail>
-            <div className="flex align-items-center gap-3">
-              <Button outline small label="Pequeno" />
-              {/* <Button variant="primary" size="medium" label="Médio" />
-              <Button variant="primary" size="medium" label="Grande" /> */}
+            <h3>Primary</h3>
+            <Detail> {primary}</Detail>
+            <div className="flex align-items-center gap-2">
+              <Button variant="primary" size="small" label="Small" />
+              <Button variant="primary" size="medium" label="Medium" />
+              <Button variant="primary" size="large" label="Large" />
             </div>
           </Content>
-
           <Content>
-            <h3>Basic outline</h3>
+            <h3>Outline</h3>
             <SmallDetail>
-            Outline buttons display a border without a background initially.
+              Outline buttons display a border without a background initially
             </SmallDetail>
-            <SmallDetail><code>{primary}</code></SmallDetail>
-            <div className="flex align-items-center gap-3">
-           <Button outline size="small" label="Pequeno" />
-              <Button outline size="medium" label="Médio" />
-              <Button outline size="medium" label="Grande" /> 
+            <Detail> {outline}</Detail>
+            <div className="flex align-items-center gap-2">
+              <Button variant="outline" size="small" label="Small" />
+              <Button variant="outline" size="medium" label="Medium" />
+              <Button variant="outline" size="large" label="Large" />
+            </div>
+          </Content>
+          <Content>
+            <h3>Text</h3>
+            <SmallDetail>
+              Text buttons are displayed as textual elements
+            </SmallDetail>
+            <Detail> {text}</Detail>
+            <div className="flex align-items-center gap-2">
+              <Button variant="text" size="small" label="Small" />
+              <Button variant="text" size="medium" label="Medium" />
+              <Button variant="text" size="large" label="Large" />
+            </div>
+          </Content>
+          <Content>
+            <h3>With icon</h3>
+            <SmallDetail>
+              {" "}
+              To display only an icon, do not insert label. The library used for
+              icons is"FontAwesomeIcon"
+            </SmallDetail>
+            <Detail> {textIcon}</Detail>
+            <div className="flex align-items-center gap-2">
+              <Button
+                variant="outline"
+                size="medium"
+                icon="fa-regular fa-plus"
+                label="Medium"
+              />
+              <Button variant="primary" icon="fa-regular fa-plus" size="medium" />
+            </div>
+          </Content>
+          <Content>
+            <h3>Disabled</h3>
+            <SmallDetail>To set the button as disabled</SmallDetail>
+            <Detail>{disabled}</Detail>
+            <div className="flex align-items-center gap-2">
+              <Button
+                variant="outline"
+                size="medium"
+                icon="fa-regular fa-plus"
+                label="Medium"
+                disabled
+              />
             </div>
           </Content>
 
           <br />
-          <p>Properties </p>
+          <Content>
+          <h3>Properties </h3>
           <SmallDetail>
             We use some attributes to compose the component
           </SmallDetail>
-          <Content>
             <Table>
               <TableRow>
                 <b>Name</b>
