@@ -2,7 +2,6 @@ import Line from "../../components/line/line";
 import colors from "../../styles/colors";
 import {
   Box,
-  Components,
   Container,
   Content,
   H2,
@@ -18,7 +17,7 @@ export default function PageColors() {
       let colorsValues: any = Object.values(colors[item]);
       return (
         <div key={index}>
-          <h3 style={{marginBottom: "10px"}}>{item.toUpperCase()}</h3>
+          <h3 style={{ marginBottom: "10px" }}>{item.toUpperCase()}</h3>
           {colorskeys?.map((c, i) => (
             <div
               key={i}
@@ -26,16 +25,18 @@ export default function PageColors() {
                 display: "flex",
                 flexDirection: "column",
                 gap: "5px",
-                padding: "10px 0"
+                padding: "10px 0",
                 //background: i % 2 == 0 ? "#e5e3e3" : "none",
               }}
             >
-              <div style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}>
-                <span style={{fontWeight: "500"}}>{c}</span>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <span style={{ fontWeight: "500" }}>{c}</span>
                 <input
                   type="color"
                   style={{
@@ -44,6 +45,7 @@ export default function PageColors() {
                     backgroundColor: "transparent",
                   }}
                   value={colorsValues[i]}
+                  readOnly
                 />
               </div>
               <Line direction="horizontal" />
@@ -58,11 +60,7 @@ export default function PageColors() {
   return (
     <Container>
       <H2>Colors of System</H2>
-
-      <Components>
-        <Content>{setColors()}</Content>
-      </Components>
-
+      <Content>{setColors()}</Content>
       <Box></Box>
     </Container>
   );
