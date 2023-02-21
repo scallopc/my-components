@@ -10,20 +10,20 @@ import {
 import { Container } from "./styles";
 
 type IDropdown = {
-  placeHolder: string;
+  placeholder: string;
   options: any;
   isMulti?: boolean;
   isImage?: any;
   isIcon?: any;
-  isSearchable?: boolean;
+  isFilterable?: boolean;
   onChange: (e) => void;
 };
 
 export function Dropdown({
-  placeHolder,
+  placeholder,
   options,
   isMulti,
-  isSearchable,
+  isFilterable,
   onChange,
   isImage,
   isIcon
@@ -95,7 +95,7 @@ const getDisplayMulti = () => {
 
   const getDisplay = () => {
     if (!selectedValue || selectedValue.length === 0) {
-      return placeHolder;
+      return placeholder;
     }
     if (isMulti) {
      return getDisplayMulti()
@@ -173,7 +173,7 @@ const getDisplayMulti = () => {
       </div>
       {showMenu && (
         <div className="dropdown-menu">
-          {isSearchable && (
+          {isFilterable && (
             <div className="search-box">
               <input onChange={onSearch} value={searchValue} />
               <FontAwesomeIcon className="icon-search" icon={faSearch} />
