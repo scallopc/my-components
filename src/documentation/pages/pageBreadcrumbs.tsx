@@ -13,7 +13,7 @@ import {
 import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
 import Line from "../../components/line/line";
 
-export default function pageBreadcrumbs() {
+export default function PageBreadcrumbs() {
   const breadcrumbs = "<Breadcrumbs />";
   return (
     <Container>
