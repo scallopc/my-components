@@ -14,7 +14,6 @@ import PageDropdowns from "../pages/pageDropdown";
 import PageDemo from "../pages/pageDemo";
 import PageColors from "../pages/pageColors";
 import PageToggleSwitch from "../pages/pageToggleSwitch";
-import pageBreadcrumbs from "../pages/pageBreadcrumbs";
 import PageTabs from "../pages/pageTabs";
 import PageColorPicker from "../pages/pageColorPicker";
 import PageTable from "../pages/pageTable";
@@ -22,7 +21,8 @@ import PageRadio from "../pages/pageRadio";
 import PageProgressSpinner from "../pages/pageProgressSpinner";
 import PageProgressBar from "../pages/pageProgressBar";
 import PageCards from "../pages/pageCard";
-import pageHeading from "../pages/pageHeading";
+import PageHeading from "../pages/pageHeading";
+import PageBreadcrumbs from "../pages/pageBreadcrumbs";
 
 export default function MainComponents() {
 
@@ -38,13 +38,13 @@ export default function MainComponents() {
       <Switch>
         <Route path="/demo" component={PageDemo} />
         <Route path="/avatar" component={PageAvatars} />
-        <Route path="/breadcrumb" component={pageBreadcrumbs} />
+        <Route path="/breadcrumb" component={PageBreadcrumbs} />
         <Route path="/button" component={PageButtons} />
         <Route path="/cards" component={PageCards} />
         <Route path="/color-picker" component={PageColorPicker} />
         <Route path="/colors" component={PageColors} />
         <Route path="/dropdown" component={PageDropdowns} />
-        <Route path="/heading" component={pageHeading} />
+        <Route path="/heading" component={PageHeading} />
         <Route path="/inputs" component={PageInputs} />
         <Route path="/line" component={PageLine} />
         <Route path="/list" component={PageList} />

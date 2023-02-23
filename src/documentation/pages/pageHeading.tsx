@@ -1,7 +1,6 @@
 import {
   Container,
   Box,
-  Components,
   Content,
   H5,
   DocumentationContainer,
@@ -10,16 +9,12 @@ import {
   Table,
   TableRow,
   Link,
+  H2,
 } from "../styles";
-
-import { useEffect, useRef, useState } from "react";
-import { ProgressBar } from "primereact/progressbar";
 import Line from "../../components/line/line";
-import Card from "../../components/card/card";
-import { Badge, ContainerBadge } from "../../components/card/styles";
 import Heading from "../../components/heading/heading";
 
-export default function pageHeading() {
+export default function PageHeading() {
   const h1 = '<Heading type="heading" headingSize="h1">Heading h1</Heading>';
   const h2 =
     '<Heading type="heading" headingSize="h2" textTransform="uppercase"> Heading h2 uppercase </Heading>';
@@ -28,23 +23,24 @@ export default function pageHeading() {
   const h5 =
     '<Heading type="heading" headingSize="h5" textTransform="lowercase"> Heading h5 lowercase </Heading>';
   const h6 = '<Heading type="heading" headingSize="h6"> Heading h6 </Heading>';
-  const xsm = '<Heading type="text" textSize="xsm"> Text extra small </Heading>';
+  const xsm =
+    '<Heading type="text" textSize="xsm"> Text extra small </Heading>';
   const sm = '<Heading type="text" textSize="sm">  Text small </Heading>';
-  const md = '<Heading type="text" textSize="md" fontStyle="italic" textTransform="uppercase">  Text medium italic uppercase </Heading>';
+  const md =
+    '<Heading type="text" textSize="md" fontStyle="italic" textTransform="uppercase">  Text medium italic uppercase </Heading>';
   const lg = '<Heading type="text" textSize="lg">  Text large </Heading>';
 
   return (
     <Container>
+      <H2>Heading</H2>
       <Box>
         <H5>Documentation</H5>
-
         <DocumentationContainer>
-          <p>Heading</p>
-          <SmallDetail>We have some heading types</SmallDetail>
           <Content>
-            <Components>
+            <h3>Heading</h3>
+            <SmallDetail>Heading types</SmallDetail>
               <div className="flex flex-column gap-3">
-                <Heading type="heading" headingSize="h1">
+              <Heading type="heading" headingSize="h1">
                   Heading h1
                 </Heading>
                 <Detail>{h1}</Detail>
@@ -88,15 +84,13 @@ export default function pageHeading() {
                 <Detail>{h6}</Detail>
                 <Line direction="horizontal" />
               </div>
-            </Components>
           </Content>
-          <br />
-          <p>Text</p>
-          <SmallDetail>
-            Card for exclusive use of topology applications in block
-          </SmallDetail>
+
           <Content>
-            <Components>
+            <h3>Text</h3>
+            <SmallDetail>
+              Text types
+            </SmallDetail>
               <div className="flex flex-column gap-3">
                 <Heading type="text" textSize="xsm">
                   Text extra small
@@ -110,7 +104,12 @@ export default function pageHeading() {
                 <Detail>{sm}</Detail>
                 <Line direction="horizontal" />
 
-                <Heading type="text" textSize="md" fontStyle="italic" textTransform="uppercase">
+                <Heading
+                  type="text"
+                  textSize="md"
+                  fontStyle="italic"
+                  textTransform="uppercase"
+                >
                   Text medium italic
                 </Heading>
                 <Detail>{md}</Detail>
@@ -121,12 +120,11 @@ export default function pageHeading() {
                 </Heading>
                 <Detail>{lg}</Detail>
               </div>
-            </Components>
           </Content>
           <br />
-          <p>Properties </p>
-          <SmallDetail>Properties general</SmallDetail>
           <Content>
+          <h3>Properties </h3>
+          <SmallDetail>Properties general</SmallDetail>
             <Table>
               <TableRow>
                 <b>Name</b>
@@ -137,15 +135,16 @@ export default function pageHeading() {
               <TableRow>
                 <div>type</div>
                 <div>string</div>
-                <div>
-                  Valid options for text "heading" | "text"
-                </div>
+                <div>Valid options for text "heading" | "text"</div>
               </TableRow>
               <Line direction="horizontal" />
               <TableRow>
                 <div>textTransform</div>
                 <div>string</div>
-                <div>Text transform. Valid options "uppercase" | "initial" | "lowercase";</div>
+                <div>
+                  Text transform. Valid options "uppercase" | "initial" |
+                  "lowercase";
+                </div>
               </TableRow>
               <Line direction="horizontal" />
               <TableRow>
@@ -162,8 +161,9 @@ export default function pageHeading() {
             </Table>
           </Content>
           <br />
-          <SmallDetail>Properties type="heading"</SmallDetail>
           <Content>
+          <h3>Properties </h3>
+          <SmallDetail>Properties type="heading"</SmallDetail>
             <Table>
               <TableRow>
                 <b>Name</b>
@@ -175,14 +175,16 @@ export default function pageHeading() {
                 <div>headingSize</div>
                 <div>string</div>
                 <div>
-                  Heading size. Valid options "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+                  Heading size. Valid options "h1" | "h2" | "h3" | "h4" | "h5" |
+                  "h6"
                 </div>
               </TableRow>
             </Table>
           </Content>
           <br />
-          <SmallDetail>Properties type="text"</SmallDetail>
           <Content>
+          <h3>Properties </h3>
+          <SmallDetail>Properties type="text"</SmallDetail>
             <Table>
               <TableRow>
                 <b>Name</b>
@@ -193,9 +195,7 @@ export default function pageHeading() {
               <TableRow>
                 <div>headingSize</div>
                 <div>string</div>
-                <div>
-                  Text size. Valid options "xsm" | "sm" | "md" | "lg"
-                </div>
+                <div>Text size. Valid options "xsm" | "sm" | "md" | "lg"</div>
               </TableRow>
             </Table>
           </Content>
