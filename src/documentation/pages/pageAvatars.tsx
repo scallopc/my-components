@@ -10,9 +10,7 @@ import {
   Table,
   TableRow,
 } from "../styles";
-import styled from "styled-components";
 import Avatar from "../../components/avatar/avatar";
-import Line from "../../components/line/line";
 
 export default function PageAvatars() {
   const label = '<Avatar size="small" label="JC" />';
@@ -106,19 +104,16 @@ export default function PageAvatars() {
                 <b>Type</b>
                 <b>Description</b>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>label</div>
                 <div>string</div>
                 <div>Defines the initial to display</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>icon</div>
                 <div>string</div>
                 <div>Defines the icon to display</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>size</div>
                 <div>string</div>
@@ -127,7 +122,6 @@ export default function PageAvatars() {
                   "large"
                 </div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>active</div>
                 <div>string</div>

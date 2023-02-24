@@ -131,13 +131,11 @@ export default function PageHeading() {
                 <b>Type</b>
                 <b>Parameters</b>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>type</div>
                 <div>string</div>
                 <div>Valid options for text "heading" | "text"</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>textTransform</div>
                 <div>string</div>
@@ -146,13 +144,11 @@ export default function PageHeading() {
                   "lowercase";
                 </div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>fontStyle</div>
                 <div>string</div>
                 <div>Text style. Valid options "italic" | "initial"</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>fontWeight</div>
                 <div>string</div>
@@ -170,7 +166,6 @@ export default function PageHeading() {
                 <b>Type</b>
                 <b>Parameters</b>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>headingSize</div>
                 <div>string</div>
@@ -191,7 +186,6 @@ export default function PageHeading() {
                 <b>Type</b>
                 <b>Parameters</b>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>headingSize</div>
                 <div>string</div>

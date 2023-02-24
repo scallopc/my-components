@@ -98,7 +98,7 @@ export default function PageDemo() {
 
   return (
     <Container>
-      <Table columns={teste} />
+      
     </Container>
   );
 }

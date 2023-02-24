@@ -1,6 +1,5 @@
 
 import Button from "../../components/button/button";
-import Line from "../../components/line/line";
 import {
   Box,
   Container,
@@ -106,7 +105,6 @@ export default function PageButtons() {
                 <b>Type</b>
                 <b>Description</b>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>variant</div>
                 <div>string</div>
@@ -115,7 +113,6 @@ export default function PageButtons() {
                   "outline" and "text"
                 </div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>disabled</div>
                 <div>boolean</div>
@@ -124,7 +121,6 @@ export default function PageButtons() {
                   "false"
                 </div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>size</div>
                 <div>string</div>
