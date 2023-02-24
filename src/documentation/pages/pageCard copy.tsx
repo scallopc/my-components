@@ -9,12 +9,8 @@ import {
   Detail,
   Table,
   TableRow,
-  Link,
 } from "../styles";
 
-import { useEffect, useRef, useState } from "react";
-import { ProgressBar } from "primereact/progressbar";
-import Line from "../../components/line/line";
 import Card from "../../components/card/card";
 import { Badge, ContainerBadge } from "../../components/card/styles";
 import Heading from "../../components/heading/heading";
@@ -378,7 +374,6 @@ export default function PageCards() {
                 <b>Type</b>
                 <b>Parameters</b>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>type</div>
                 <div>string</div>

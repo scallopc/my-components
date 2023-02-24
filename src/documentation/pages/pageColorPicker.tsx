@@ -14,7 +14,6 @@ import {
 
 import { useState } from "react";
 import { ColorPicker } from "primereact/colorpicker";
-import Line from "../../components/line/line";
 
 export default function PageColorPicker() {
   const [color2, setColor2] = useState(null);
@@ -72,13 +71,11 @@ export default function PageColorPicker() {
                 <b>any</b>
                 <b>Description</b>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>value</div>
                 <div>boolean</div>
                 <div>Value of the component</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>inline</div>
                 <div>string</div>
@@ -97,7 +94,6 @@ export default function PageColorPicker() {
                 <b>Type</b>
                 <b>Parameters</b>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>onChange</div>
                 <div>

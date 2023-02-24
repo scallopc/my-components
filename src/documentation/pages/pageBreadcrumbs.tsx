@@ -11,7 +11,6 @@ import {
   TableRow,
 } from "../styles";
 import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
-import Line from "../../components/line/line";
 
 export default function PageBreadcrumbs() {
   const breadcrumbs = "<Breadcrumbs />";
@@ -52,19 +51,16 @@ export default function PageBreadcrumbs() {
                 <b>Type</b>
                 <b>Description</b>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>home</div>
                 <div>boolean</div>
                 <div>Define if the component will have a home</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>homeLink</div>
                 <div>string </div>
                 <div>Set the home route</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>homeName</div>
                 <div>string </div>

@@ -1,7 +1,6 @@
 import {
   Container,
   Box,
-  Components,
   Content,
   H2,
   H5,
@@ -10,10 +9,7 @@ import {
   TableRow,
   Detail,
   SmallDetail,
-  Link,
 } from "../styles";
-
-import Line from "../../components/line/line";
 import { Dropdown } from "../../components/dropdowns/dropdown";
 
 export default function PageDropdowns() {
@@ -113,19 +109,16 @@ export default function PageDropdowns() {
                 <b>Type</b>
                 <b>Description</b>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>isMulti</div>
                 <div>boolean</div>
                 <div>MultiSelect is used to select multiple items from a collection</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>options</div>
                 <div>Array</div>
                 <div>List with items to be displayed in the dropdown</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>placeholder</div>
                 <div>string</div>
@@ -136,7 +129,6 @@ export default function PageDropdowns() {
                 <div>boolean</div>
                 <div>Filtering that is enabled by adding the filter property</div>
               </TableRow>
-              <Line direction="horizontal" />
             </Table>
           </Content>
           <br />
@@ -148,7 +140,6 @@ export default function PageDropdowns() {
                 <b>Type</b>
                 <b>Parameters</b>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>onChange</div>
                 <div>
