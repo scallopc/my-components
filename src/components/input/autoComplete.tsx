@@ -144,7 +144,7 @@ export default function AutoComplete({
     } else {
       return (
         <InputArea>
-          <IconLeft className="fa-regular fa-search" />
+          <IconLeft className="fa-regular fa-magnifying-glass" />
           <InputContainer
             ref={ref}
             placeholder={placeholder}
@@ -160,7 +160,7 @@ export default function AutoComplete({
             }}
           />
           <IconRight
-            className="fa-regular fa-xmark"
+            className="fa-solid fa-xmark"
             onClick={() => {
               setSearch("");
               setIsComponentVisible(false);

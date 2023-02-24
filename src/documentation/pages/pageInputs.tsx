@@ -18,6 +18,12 @@ import Line from "../../components/line/line";
 
 export default function PageInputs() {
   const [itemSelected, setItemSelected] = useState(null);
+  const useInput =
+    'Input label="Usuário" placeholder="Placeholder" type="text" />';
+  const useInputIcon =
+    'Input label="E-mail" placeholder="email@email.com" type="text" iconLeft="fa-solid fa-envelope"/>';
+  const useInputError =
+    '<Input label="Senha" placeholder="Placeholder" type="password" error="error" iconLeft="fa-solid fa-lock" />';
 
   const cities = [
     { id: 1, name: "Brasilia" },
@@ -47,23 +53,23 @@ export default function PageInputs() {
 
   const topologias = [
     {
-      title: "Vertice",
-      subTitle: "Search Docs",
+      name: "Vertice",
+      description: "Search Docs",
       tags: ["Nova", "Produção", "Adipsicing Elit"],
     },
     {
-      title: "Vertice 2",
-      subTitle: "Search Docs",
+      name: "Vertice 2",
+      description: "Search Docs",
       tags: ["Nova", "Produção", "Adipsicing Elit"],
     },
     {
-      title: "Vertice 3",
-      subTitle: "Search Docs",
+      name: "Vertice 3",
+      description: "Search Docs",
       tags: ["Nova", "Produção", "Adipsicing Elit"],
     },
     {
-      title: "Vertice",
-      subTitle: "Search Docs",
+      name: "Vertice",
+      description: "Search Docs",
       tags: ["Nova", "Produção", "Adipsicing Elit"],
     },
   ];
@@ -76,138 +82,98 @@ export default function PageInputs() {
     <Container>
       <H2>Inputs</H2>
       <Box>
-        <h3>Com ícones / sem ícones</h3>
-        <Components>
-          <div>
-            <Content>
-              <Input
-                label="Usuário"
-                placeholder="Placeholder"
-                type="text"
-                error="error"
-                iconLeft="fa-solid fa-user"
-              />
-
-              <Input
-                label="Usuário"
-                placeholder="Placeholder"
-                type="text"
-              ></Input>
-            </Content>
-          </div>
-          <div>
-            <Content>
-              <Input
-                label="Senha"
-                placeholder="Senha"
-                type="password"
-                disabled
-                iconLeft="fa-solid fa-lock"
-              />
-
-              <Input
-                label="E-mail"
-                placeholder="email@email.com"
-                type="text"
-                iconLeft="fa-solid fa-envelope"
-              />
-            </Content>
-          </div>
-          <div>
-            <Content>
-              <AutoComplete
-                placeholder="Capitais do Brasil"
-                data={cities}
-                selected={(item: any) => console.log(item)}
-                handlerChange={(item: any) => console.log(item)}
-              />
-
-              <AutoComplete
-                placeholder="Search"
-                data={cities}
-                selected={(item: any) => console.log(item)}
-                handlerChange={(item: any) => console.log(item)}
-                tags
-              />
-            </Content>
-          </div>
-        </Components>
-      </Box>
-
-      <Box>
         <H5>Documentation</H5>
         <DocumentationContainer>
-          <p>Input text</p>
-          <SmallDetail>
-            Input Text is a basic input for entering text or a number
-          </SmallDetail>
           <Content>
-            <Components>
-              <Detail>
-                {" "}
-                <code>
-                  &lt;Input label="Usuário" placeholder="Placeholder"
-                  type="text" &gt;
-                </code>
-                <code>&lt;/Input&gt;</code>
-              </Detail>
-            </Components>
+            <h3>Input text</h3>
+            <SmallDetail>
+              Input Text is a basic input for entering text or a number
+            </SmallDetail>
+            <Detail>{useInput}</Detail>
+            <Input label="Usuário" placeholder="Placeholder" type="text" />
           </Content>
-          <br />
 
-          <p>Input icon</p>
-          <SmallDetail>
-            The icon is passed by the children, you need to define if the icon
-            will be on the right or on the left with
+          <Content>
+            <h3>Input with icon</h3>
+            <SmallDetail>
+              Use "iconLeft" to add icons to the left of the input
+            </SmallDetail>
+            <Detail>{useInputIcon}</Detail>
+            <Input
+              label="E-mail"
+              placeholder="email@email.com"
+              type="text"
+              iconLeft="fa-solid fa-envelope"
+            />
+          </Content>
+
+          <Content>
+            <h3>Input error</h3>
+            <SmallDetail>
+              Use "error" to add error message for the input
+            </SmallDetail>
+            <Detail>{useInputError}</Detail>
+            <Input
+              label="Senha"
+              placeholder="Placeholder"
+              type="password"
+              error="error"
+              iconLeft="fa-solid fa-lock"
+            />
+          </Content>
+
+          <Content>
+            <h3>Input autocomplete</h3>
+            <SmallDetail>
+              AutoComplete is a component that requires a list of suggestions to
+              query the results.
+            </SmallDetail>
             <Detail>
-              <code>&lt;IconLeft /&gt;</code>
+              <code>
+                &lt;AutoComplete placeholder="Search" type="text" data="data
+                list" selected="method that returns the chosen suggestion"
+                handlerChange="method that returns the modification in the
+                input"&gt;
+              </code>
+              <code>&lt;/AutoComplete&gt;</code>
             </Detail>
-            and
+            <AutoComplete
+              placeholder="Capitais do Brasil"
+              data={cities}
+              selected={(item: any) => console.log(item)}
+              handlerChange={(item: any) => console.log(item)}
+            />
+          </Content>
+
+          <Content>
+            <h3>Input autocomplete with tags</h3>
+            <SmallDetail>
+            If this list returns tags, we use the "tags" property
+            </SmallDetail>
             <Detail>
-              <code>&lt;IconRight /&gt;</code>
+              <code>
+                &lt;AutoComplete placeholder="Search" type="text" data="data
+                list" selected="method that returns the chosen suggestion"
+                handlerChange="method that returns the modification in the
+                input" tags&gt;
+              </code>
+              <code>&lt;/AutoComplete&gt;</code>
             </Detail>
-          </SmallDetail>
-          <Content>
-            <Components>
-              <Detail>
-                {" "}
-                <code>
-                  &lt;Input label="Usuário" placeholder="Placeholder"
-                  type="text"&gt;
-                </code>
-                <code>&lt;IconLeft icon=icon/&gt;</code>
-                <code>&lt;/Input&gt;</code>
-              </Detail>
-            </Components>
+            <AutoComplete
+              placeholder="Search"
+              data={topologias}
+              selected={(item: any) => console.log(item)}
+              handlerChange={(item: any) => console.log(item)}
+              tags
+            />
           </Content>
-          <br />
 
-          <p>Input autocomplete</p>
-          <SmallDetail>
-            AutoComplete is a component that requires a list of suggestions to
-            query the results.
-          </SmallDetail>
-          <Content>
-            <Components>
-              <Detail>
-                {" "}
-                <code>
-                  &lt;AutoComplete variant="data" placeholder="Search"
-                  type="text" data="Lista de dados" selected="method that
-                  returns the chosen suggestion" handlerChange="method that
-                  returns the modification in the input"&gt;
-                </code>
-                <code>&lt;/AutoComplete&gt;</code>
-              </Detail>
-            </Components>
-          </Content>
           <br />
-
-          <p>Properties </p>
-          <SmallDetail>
-            We use some attributes to compose the component
-          </SmallDetail>
           <Content>
+            <h3>Properties </h3>
+            <SmallDetail>
+              We use some attributes to compose the component
+            </SmallDetail>
             <Table>
               <TableRow>
                 <b>Name</b>
@@ -243,17 +209,15 @@ export default function PageInputs() {
               </TableRow>
               <Line direction="horizontal" />
               <TableRow>
-                <div>Variant</div>
-                <div>string</div>
-                <div>
-                  {" "}
-                  Defines what type of data entry it will be. <br />
-                  <strong>Data:</strong> the data is passed in the data
-                  property, and you don't need to pass anything as a child in
-                  the component. <br />
-                  <strong>Api:</strong> The layout can be created as a child, it
-                  is not necessary to pass the data to the component.
-                </div>
+                <div>tags</div>
+                <div>boolean</div>
+                <div>If you have tags in your object, use this attribute</div>
+              </TableRow>
+              <Line direction="horizontal" />
+              <TableRow>
+                <div>closable</div>
+                <div>boolean</div>
+                <div>Define if you have the icon to clear the cache</div>
               </TableRow>
               <Line direction="horizontal" />
               <TableRow>
