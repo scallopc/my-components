@@ -12,11 +12,10 @@ import {
   Link,
 } from "../styles";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-import { FilterMatchMode, FilterOperator } from "primereact/api";
-import Line from "../../components/line/line";
+
 
 export default function PageTable() {
   const [selectedProduct1, setSelectedProduct1] = useState(null);
@@ -307,13 +306,11 @@ export default function PageTable() {
                 <b>Type</b>
                 <b>Description</b>
               </TableRow>
-              <Line direction="horizontal"/>
               <TableRow>
                 <div>value</div>
                 <div>array</div>
                 <div>Value of the component</div>
               </TableRow>
-              <Line direction="horizontal"/>
               <TableRow>
                 <div>responsiveLayout</div>
                 <div>string</div>
@@ -321,7 +318,6 @@ export default function PageTable() {
                 Applies "scroll" to the table
                 </div>
               </TableRow>
-              <Line direction="horizontal"/>
               <TableRow>
                 <div>selectionMode</div>
                 <div>string</div>
@@ -329,13 +325,11 @@ export default function PageTable() {
                 Selection mode, valid options "single" or "multiple"
                 </div>
               </TableRow>
-              <Line direction="horizontal"/>
               <TableRow>
                 <div>selection</div>
                 <div>string</div>
                 <div>Selected item</div>
               </TableRow>
-              <Line direction="horizontal"/>
               <TableRow>
                 <div>metaKeySelection</div>
                 <div>boolean</div>
@@ -343,7 +337,6 @@ export default function PageTable() {
                 When false, allows you to select multiple rows
                 </div>
               </TableRow>
-              <Line direction="horizontal"/>
               <TableRow>
                 <div>dragSelection</div>
                 <div>string</div>
@@ -363,7 +356,6 @@ export default function PageTable() {
                 <b>Type</b>
                 <b>Parameters</b>
               </TableRow>
-              <Line direction="horizontal"/>
               <TableRow>
                 <div>onSelectionChange</div>
                 <div>

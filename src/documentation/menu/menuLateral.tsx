@@ -1,7 +1,6 @@
 import { ContainerMenuLateral, MenuContainer } from "./styles";
 import { HashRouter } from "react-router-dom";
 import MenuRoutes from "../../components/menuRoutes/menuRoutes";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
 
 
 export default function MenuLateral() {
@@ -22,12 +21,9 @@ export default function MenuLateral() {
           <MenuRoutes title="Inputs" to='/inputs' />
           <MenuRoutes title="Line" to='/line' />
           <MenuRoutes title="List" to='/list' />
-          <MenuRoutes title="Logo" to='/logo' />
           <MenuRoutes title="Pagination" to='/pagination' />
           <MenuRoutes title="Progress Bar" to='/progress-bar' />
-          <MenuRoutes title="Progress Spinner" to='/progress-spinner' />
           <MenuRoutes title="Radio" to='/radio' />
-          <MenuRoutes title="Select" to='/selects' />
           <MenuRoutes title="Table" to='/table' />
           <MenuRoutes title="Tabs" to='/tabs' />
           <MenuRoutes title="Toggle Switch" to='/toggle-switch' />

@@ -11,21 +11,13 @@ import {
   Table,
   TableRow,
 } from "../styles";
-import styled from "styled-components";
 import { Tab } from "../../components/tab/tab";
 import { Tabs } from "../../components/tab/tabs";
 import Avatar from "../../components/avatar/avatar";
 import List, { IList } from "../../components/list/list";
 import { useState } from "react";
 import ToggleSwitch from "../../components/toggleSwitch/toggleSwitch";
-import Line from "../../components/line/line";
 import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
-
-const ContentAvatars = styled.div`
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-`;
 
 export default function PageTabs() {
   const list = [
@@ -55,7 +47,7 @@ export default function PageTabs() {
           </SmallDetail>
           <Content>
             <h3>Tabs default style</h3>
-            <ContentAvatars>
+            <>
               <Tabs>
                 <Tab title="Tab 1">
                   Tab 1 Lorem, ipsum dolor sit amet consectetur adipisicing
@@ -70,7 +62,7 @@ export default function PageTabs() {
                   <ToggleSwitch onChange={teste}/>
                 </Tab>
               </Tabs>
-            </ContentAvatars>
+            </>
           </Content>
 
           <Content>
@@ -90,7 +82,7 @@ export default function PageTabs() {
           <Components>
             <Content>
               <h3>Tabs around style</h3>
-              <ContentAvatars>
+              <>
                 <Tabs styleContentActive="around">
                   <Tab title="Tab Breadcrumb" styleTabActive="around">
                     <br />
@@ -116,7 +108,7 @@ export default function PageTabs() {
                     ))}
                   </Tab>
                 </Tabs>
-              </ContentAvatars>
+              </>
             </Content>
           </Components>
           <SmallDetail>
@@ -152,19 +144,16 @@ export default function PageTabs() {
                 <b>Type</b>
                 <b>Description</b>
               </TableRow>
-              <Line direction="horizontal"/>
               <TableRow>
                 <div>title</div>
                 <div>string</div>
                 <div>Defines the tab title</div>
               </TableRow>
-              <Line direction="horizontal"/>
               <TableRow>
                 <div>styleContentActive</div>
                 <div>string</div>
                 <div>Defines the tab's content style</div>
               </TableRow>
-              <Line direction="horizontal"/>
               <TableRow>
                 <div>styleTabActive</div>
                 <div>string</div>

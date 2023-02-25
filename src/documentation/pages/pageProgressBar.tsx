@@ -14,7 +14,6 @@ import {
 
 import { useEffect, useRef, useState } from "react";
 import { ProgressBar } from "primereact/progressbar";
-import Line from "../../components/line/line";
 
 export default function PageProgressBar() {
   const [value1, setValue1] = useState(0);
@@ -89,13 +88,11 @@ export default function PageProgressBar() {
                 <b>Type</b>
                 <b>Parameters</b>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>id</div>
                 <div>string</div>
                 <div>Unique identifier of the element</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>value</div>
                 <div>number</div>

@@ -12,17 +12,8 @@ import {
   TableRow,
 } from "../styles";
 import styled from "styled-components";
-import ToggleSwitch from "../../components/toggleSwitch/toggleSwitch";
 import { useEffect, useState } from "react";
-import Line from "../../components/line/line";
 import { Radio } from "../../components/radio/radio";
-
-const ContentToggle = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-`;
 
 export default function PageRadio() {
   const [select, setSelect] = useState("Dog");
@@ -153,25 +144,21 @@ export default function PageRadio() {
                 <b>Type</b>
                 <b>Description</b>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>label</div>
                 <div>string</div>
                 <div>Defines the label of the radio</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>value</div>
                 <div>string</div>
                 <div>Defines the value of the radio</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>checked</div>
                 <div>boolean</div>
                 <div>Defines the selected value</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>onChange</div>
                 <div>event</div>

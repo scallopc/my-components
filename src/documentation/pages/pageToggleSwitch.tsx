@@ -14,7 +14,6 @@ import {
 import styled from "styled-components";
 import ToggleSwitch from "../../components/toggleSwitch/toggleSwitch";
 import { useState } from "react";
-import Line from "../../components/line/line";
 
 const ContentToggle = styled.div`
   display: flex;
@@ -69,7 +68,6 @@ export default function PageToggleSwitch() {
                 <b>Type</b>
                 <b>Description</b>
               </TableRow>
-              <Line direction="horizontal"/>
               <TableRow>
                 <div>onChange</div>
                 <div>event</div>

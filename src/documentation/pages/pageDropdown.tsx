@@ -13,8 +13,10 @@ import {
 import { Dropdown } from "../../components/dropdowns/dropdown";
 
 export default function PageDropdowns() {
-  const dpChip ="<Dropdown isFilterable isMulti placeholder=Select... options={options the dropdown} onChange={(value) => console.log(value)} />";
-  const dpBasic ="<Dropdown placeholder=Select... options={options the dropdown} onChange={(value) => console.log(value)} />";
+  const dpChip =
+    "<Dropdown isFilterable isMulti placeholder=Select... options={options the dropdown} onChange={(value) => console.log(value)} />";
+  const dpBasic =
+    "<Dropdown placeholder=Select... options={options the dropdown} onChange={(value) => console.log(value)} />";
 
   const cities = [
     {
@@ -58,12 +60,17 @@ export default function PageDropdowns() {
       <Box>
         <H5>Documentation</H5>
         <DocumentationContainer>
+          <p>
+            Dropdown also known as Select, is used to choose an item from a
+            collection of options.
+          </p>
           <Content>
             <h3>Chip</h3>
             <SmallDetail>
-            Selected values are displayed as a comma separated list by default, setting display as chip displays them as chips.
+              Selected values are displayed as a comma separated list by
+              default, setting display as chip displays them as chips.
             </SmallDetail>
-           <Detail> {dpChip} </Detail>
+            <Detail> {dpChip} </Detail>
             <Dropdown
               isFilterable
               isMulti
@@ -112,7 +119,9 @@ export default function PageDropdowns() {
               <TableRow>
                 <div>isMulti</div>
                 <div>boolean</div>
-                <div>MultiSelect is used to select multiple items from a collection</div>
+                <div>
+                  MultiSelect is used to select multiple items from a collection
+                </div>
               </TableRow>
               <TableRow>
                 <div>options</div>
@@ -127,7 +136,9 @@ export default function PageDropdowns() {
               <TableRow>
                 <div>isFilterable</div>
                 <div>boolean</div>
-                <div>Filtering that is enabled by adding the filter property</div>
+                <div>
+                  Filtering that is enabled by adding the filter property
+                </div>
               </TableRow>
             </Table>
           </Content>
