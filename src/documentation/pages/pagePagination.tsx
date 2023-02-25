@@ -3,7 +3,6 @@ import PaginationNumber from "../../components/paginationNumber/paginationNumber
 import PaginationText from "../../components/paginationText/paginationText";
 import {
   Box,
-  Components,
   Container,
   Content,
   Detail,

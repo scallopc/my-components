@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import {
   Container,
   Box,
-  Components,
   Content,
   H2,
   H5,
@@ -14,7 +13,6 @@ import {
 } from "../styles";
 import Input from "../../components/input/input";
 import AutoComplete from "../../components/input/autoComplete";
-import Line from "../../components/line/line";
 
 export default function PageInputs() {
   const [itemSelected, setItemSelected] = useState(null);
@@ -180,19 +178,16 @@ export default function PageInputs() {
                 <b>Type</b>
                 <b>Description</b>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>label</div>
                 <div>string</div>
                 <div>Label the input</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>placeholder</div>
                 <div>string</div>
                 <div>Default text to display when no option is selected</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>type</div>
                 <div>string</div>
@@ -201,34 +196,29 @@ export default function PageInputs() {
                   "password"
                 </div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>error</div>
                 <div>string</div>
                 <div>Defines if the input can have an error</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>tags</div>
                 <div>boolean</div>
                 <div>If you have tags in your object, use this attribute</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>closable</div>
                 <div>boolean</div>
                 <div>Define if you have the icon to clear the cache</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>selected</div>
-                <div>function</div>
+                <div>Event</div>
                 <div>Method that returns the chosen item on click</div>
               </TableRow>
-              <Line direction="horizontal" />
               <TableRow>
                 <div>handlerChange</div>
-                <div>function</div>
+                <div>Event</div>
                 <div>method that returns changes to the component's input</div>
               </TableRow>
             </Table>

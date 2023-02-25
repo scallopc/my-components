@@ -1,4 +1,3 @@
-import Line from "../../components/line/line";
 import List, { IList } from "../../components/list/list";
 import {
   Box,
@@ -90,7 +89,6 @@ export default function PageList() {
                 <b>Type</b>
                 <b>Description</b>
               </TableRow>
-              <Line direction="horizontal"/>
               <TableRow>
                 <div>type</div>
                 <div>string</div>

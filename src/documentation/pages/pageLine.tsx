@@ -66,7 +66,6 @@ export default function PageLine() {
                 <b>Type</b>
                 <b>Description</b>
               </TableRow>
-              <Line direction="horizontal"/>
               <TableRow>
                 <div>direction</div>
                 <div>string</div>
