@@ -6,7 +6,6 @@ import PageInputs from "../pages/pageInputs";
 import PageButtons from "../pages/pageButtons";
 import PageAvatars from "../pages/pageAvatars";
 import PagePagination from "../pages/pagePagination";
-import PageList from "../pages/pageList";
 import PageLine from "../pages/pageLine";
 import PageDropdowns from "../pages/pageDropdown";
 import PageDemo from "../pages/pageDemo";
@@ -44,7 +43,6 @@ export default function MainComponents() {
         <Route path="/heading" component={PageHeading} />
         <Route path="/inputs" component={PageInputs} />
         <Route path="/line" component={PageLine} />
-        <Route path="/list" component={PageList} />
         <Route path="/pagination" component={PagePagination} />
         <Route path="/progress-bar" component={PageProgressBar} />
         <Route path="/radio" component={PageRadio} />
