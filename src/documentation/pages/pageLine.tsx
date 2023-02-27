@@ -1,7 +1,6 @@
 import Line from "../../components/line/line";
 import {
   Box,
-  Components,
   Container,
   Content,
   Detail,
@@ -14,52 +13,35 @@ import {
 } from "../styles";
 
 export default function PageLine() {
-
   return (
     <Container>
       <H2>Line</H2>
 
-      <Components>
-        <Content>
-          <h3>Line Horizontal</h3>
-          <br />
-          <Line direction="horizontal"/>
-        </Content>
-
-        <Content>
-          <h3>Line Vertical</h3>
-          <br />
-          <Line direction="vertical"/>
-        </Content>
-
-      </Components>
-
       <Box>
         <H5>Documentation</H5>
         <DocumentationContainer>
-          <p>Line Horizontal</p>
           <Content>
-            <Components>
-              <Detail>
-                <code>&lt;Line direction="horizontal"/&gt;</code>
-              </Detail>
-            </Components>
+            <h3>Line Horizontal</h3>
+            <Detail>
+              <code>&lt;Line direction="horizontal"/&gt;</code>
+            </Detail>
+            <Line direction="horizontal" />
           </Content>
-          <br />
 
-          <p>Line Vertical</p>
           <Content>
-            <Components>
-              <Detail>
+            <h3>Line Vertical</h3>
+            <Detail>
               <code>&lt;Line direction="vertical"/&gt;</code>
-              </Detail>
-            </Components>
+            </Detail>
+            <Line direction="vertical" />
           </Content>
-          <br />
 
-          <p>Properties </p>
-          <SmallDetail>Use this attribute to compose the component</SmallDetail>
+          <br />
           <Content>
+            <h3>Properties </h3>
+            <SmallDetail>
+              Use this attribute to compose the component
+            </SmallDetail>
             <Table>
               <TableRow>
                 <b>Name</b>
@@ -70,7 +52,8 @@ export default function PageLine() {
                 <div>direction</div>
                 <div>string</div>
                 <div>
-                Direction of the line, valid options are "horizontal" and "vertical"
+                  Direction of the line, valid options are "horizontal" and
+                  "vertical"
                 </div>
               </TableRow>
             </Table>
