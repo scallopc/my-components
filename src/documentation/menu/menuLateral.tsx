@@ -21,7 +21,7 @@ export default function MenuLateral() {
           <MenuRoutes title="Inputs" to='/inputs' />
           <MenuRoutes title="Line" to='/line' />
           <MenuRoutes title="Pagination" to='/pagination' />
-          <MenuRoutes title="Progress Bar" to='/progress-bar' />
+          <MenuRoutes title="Progress" to='/progress' />
           <MenuRoutes title="Radio" to='/radio' />
           <MenuRoutes title="Table" to='/table' />
           <MenuRoutes title="Tabs" to='/tabs' />

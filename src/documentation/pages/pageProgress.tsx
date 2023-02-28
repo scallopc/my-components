@@ -15,7 +15,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { ProgressBar } from "primereact/progressbar";
 
-export default function PageProgressBar() {
+export default function PageProgress() {
   const [value1, setValue1] = useState(0);
   const interval = useRef(null);
   const bar = '<ProgressBar value={value1} />';
@@ -49,39 +49,19 @@ export default function PageProgressBar() {
 
         <DocumentationContainer>
           <SmallDetail>
-            here we have two progress bar options. Components from the "PrimeReact"
-            library.
+          Is a process status indicator.
           </SmallDetail>
-          <SmallDetail>
-            <Link
-              href="https://www.primefaces.org/primereact/progressbar/"
-              target={"_blank"}
-            >
-              More about progress bar
-            </Link>
-          </SmallDetail>
-          <br />
-          <p>Indeterminate</p>
+          
           <Content>
-            <Components>
-              <Detail>{indeterminate}</Detail>
-              <ProgressBar mode="indeterminate" />
-            </Components>
+            <h3>Indeterminate</h3>
+            <Detail>{indeterminate}</Detail>
+            <ProgressBar mode="indeterminate" />
           </Content>
           <br />
 
-          <p>Dynamic</p>
           <Content>
-            <Components>
-              <Detail>{bar}</Detail>
-          <ProgressBar value={value1} />
-            </Components>
-          </Content>
-          <br />
-
-          <p>Properties </p>
-          <SmallDetail>Properties used here</SmallDetail>
-          <Content>
+            <h3>Properties </h3>
+            <SmallDetail>Properties used here</SmallDetail>
             <Table>
               <TableRow>
                 <b>Name</b>
