@@ -15,7 +15,7 @@ import PageTabs from "../pages/pageTabs";
 import PageColorPicker from "../pages/pageColorPicker";
 import PageTable from "../pages/pageTable";
 import PageRadio from "../pages/pageRadio";
-import PageProgressBar from "../pages/pageProgressBar";
+import PageProgress from "../pages/pageProgress";
 import PageCards from "../pages/pageCard";
 import PageHeading from "../pages/pageHeading";
 import PageBreadcrumbs from "../pages/pageBreadcrumbs";
@@ -44,7 +44,7 @@ export default function MainComponents() {
         <Route path="/inputs" component={PageInputs} />
         <Route path="/line" component={PageLine} />
         <Route path="/pagination" component={PagePagination} />
-        <Route path="/progress-bar" component={PageProgressBar} />
+        <Route path="/progress" component={PageProgress} />
         <Route path="/radio" component={PageRadio} />
         <Route path="/table" component={PageTable} />
         <Route path="/tabs" component={PageTabs} />
