@@ -1,6 +1,5 @@
 import {
   Box,
-  Components,
   Container,
   Content,
   Detail,
@@ -11,7 +10,6 @@ import {
   Table,
   TableRow,
 } from "../styles";
-import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { Radio } from "../../components/radio/radio";
 
@@ -53,91 +51,52 @@ export default function PageRadio() {
     console.log(selectedValue);
   }, [selectedValue]);
 
-  const radio = '<Radio '+' label="Dog" '+' value="Dog" '+' checked={select === "Dog"} '+' onChange={(event) => handleSelectChangePet(event)}/>';
+  const radioOptions =
+    "<Radio " +
+    ' label="label name" ' +
+    " checked={item selected} " +
+    " onChange={method that returns the modification}/>";
+
+  const radioDisabled = '<Radio label="Disabled" disabled />';
+  const radioDisabledChecked = '<Radio label="Checked disabled" checked={true} disabled />';
 
   return (
     <Container>
       <H2>Radio</H2>
-
-      <Components>
-        <Content>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "20px",
-              alignItems: "flex-start",
-            }}
-          >
-            <div
-              style={{ display: "flex", flexDirection: "column", gap: "10px", flexWrap:'wrap' }}
-            >
-              <span>Radio options map</span>
-              <div  style={{ display: "flex", gap: "10px" }}>
-                {drinks?.map((item, index) => (
-                  <Radio
-                    key={index}
-                    label={item.label}
-                    checked={selectedValue === item.label}
-                    onChange={(e) => handleChangeMap(e)}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <div
-              style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-            >
-              <span>Radio disabled</span>
-              <Radio label="Disabled" disabled />
-              <Radio label="Checked disabled" checked={true} disabled />
-            </div>
-
-            <div
-              style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-            >
-              <span>Radio options single</span>
-              <Radio
-                label="Dog"
-                value="Dog"
-                checked={select === "Dog"}
-                onChange={(event) => handleSelectChangePet(event)}
-              />
-              <Radio
-                label="Cat"
-                value="Cat"
-                checked={select === "Cat"}
-                onChange={(event) => handleSelectChangePet(event)}
-              />
-            </div>
-          </div>
-        </Content>
-      </Components>
-
       <Box>
         <H5>Documentation</H5>
         <DocumentationContainer>
-          <p>Start</p>
-          <SmallDetail>
+          <p>
             The Radio button uses the properties: checked, onChange, disabled
             and label
-          </SmallDetail>
+          </p>
           <Content>
-            <Components>
-              <Detail>
-                <div>
-                  {radio}
-                </div>
-              </Detail>
-            </Components>
+            <h3>Radio options</h3>
+            <Detail>{radioOptions}</Detail>
+            <div style={{ display: "flex", gap: "10px" }}>
+              {drinks?.map((item, index) => (
+                <Radio
+                  key={index}
+                  label={item.label}
+                  checked={selectedValue === item.label}
+                  onChange={(e) => handleChangeMap(e)}
+                />
+              ))}
+            </div>
           </Content>
-          <br />
-
-          <p>Properties </p>
-          <SmallDetail>
-            We use some attributes to compose the component
-          </SmallDetail>
           <Content>
+            <h3>Radio disabled</h3>
+            <Detail>{radioDisabled}</Detail>
+            <Radio label="Disabled" disabled />
+            <Radio label="Checked disabled" checked={true} disabled />
+          </Content>
+
+          <br />
+          <Content>
+            <h3>Properties </h3>
+            <SmallDetail>
+              We use some attributes to compose the component
+            </SmallDetail>
             <Table>
               <TableRow>
                 <b>Name</b>
