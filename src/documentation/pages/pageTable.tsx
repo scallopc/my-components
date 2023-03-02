@@ -10,6 +10,7 @@ import {
   Table,
   TableRow,
   Link,
+  H2,
 } from "../styles";
 
 import { useState } from "react";
@@ -76,20 +77,17 @@ export default function PageTable() {
 
   return (
     <Container>
-     
+      <H2>Table</H2>
       <Box>
         <H5>Documentation</H5>
-
         <DocumentationContainer>
-          <SmallDetail>
+          <p>
             here we have some table options. Components from the "PrimeReact"
             library.
-          </SmallDetail>
-          <br />
-          <p>Table Basic</p>
+          </p>
           <SmallDetail>
             <Link
-              href="https://www.primefaces.org/primereact/datatable/basic/"
+              href="https://primereact.org/datatable/#basic"
               target={"_blank"}
             >
               More about table basic
@@ -97,21 +95,33 @@ export default function PageTable() {
           </SmallDetail>
 
           <Content>
-            <Components>
-              <Detail>
-                <code>
-                  &lt;DataTable value=<code>&#123;</code>countries<code>&#125;</code> responsiveLayout="scroll" &gt;
-                </code>
-                <br />
-                 &nbsp; <code>&lt;Column field="name" header="Moeda" /&gt;</code> <br />
-                &nbsp; <code>&lt;Column field="name" header="Preço" /&gt;</code> <br />
-                &nbsp; <code>&lt;Column field="name" header="Volume" /&gt;</code> <br />
-                &nbsp; <code>&lt;Column field="name" header="Mercado capital" /&gt;</code> <br />
-                 <code>&lt;/DataTable&gt;</code> <br />
-              </Detail>
-            </Components>
-          </Content>
-          <Content>
+            <h3>Basic</h3>
+            <Detail>
+              <code>
+                &lt;DataTable value=<code>&#123;</code>countries
+                <code>&#125;</code> responsiveLayout="scroll" &gt;
+              </code>
+              <br />
+              &nbsp; <code>
+                &lt;Column field="name" header="Moeda" /&gt;
+              </code>{" "}
+              <br />
+              &nbsp; <code>
+                &lt;Column field="name" header="Preço" /&gt;
+              </code>{" "}
+              <br />
+              &nbsp; <code>
+                &lt;Column field="name" header="Volume" /&gt;
+              </code>{" "}
+              <br />
+              &nbsp;{" "}
+              <code>
+                &lt;Column field="name" header="Mercado capital" /&gt;
+              </code>{" "}
+              <br />
+              <code>&lt;/DataTable&gt;</code> <br />
+            </Detail>
+
             <DataTable value={countries} responsiveLayout="scroll">
               <Column field="name" header="Moeda"></Column>
               <Column field="price" header="Preço"></Column>
@@ -119,174 +129,187 @@ export default function PageTable() {
               <Column field="capital" header="Mercado capital"></Column>
             </DataTable>
           </Content>
-          <br />
-
-          <br />
-          <p>Table Select single</p>
-          <SmallDetail>
-            <Link
-              href="https://www.primefaces.org/primereact/datatable/selection/"
-              target={"_blank"}
-            >
-              More about table select single
-            </Link>
-          </SmallDetail>
 
           <Content>
-            <Components>
-              <Detail>
-                <code>
-                  &lt;DataTable value=<code>&#123;</code>countries<code>&#125;</code> responsiveLayout="scroll"
-                  selection=<code>&#123;</code>selectedProduct1<code>&#125;</code> onSelectionChange=<code>&#123;</code>function<code>&#125;</code> 
-                  selectionMode="single"&gt;
-                </code>
-                <br />
-                 &nbsp; <code>&lt;Column field="name" header="Moeda" /&gt;</code> <br />
-                 &nbsp; <code>&lt;Column field="name" header="Preço" /&gt;</code> <br />
-                 &nbsp; <code>&lt;Column field="name" header="Volume" /&gt;</code> <br />
-                 &nbsp; <code>&lt;Column field="name" header="Mercado capital" /&gt;</code> <br />
-                 <code>&lt;/DataTable&gt;</code> <br />
-              </Detail>
-            </Components>
-          </Content>
-          <Content>
-            <DataTable value={countries} responsiveLayout="scroll"  selectionMode="single"  selection={selectedProduct1}
+            <h3>Select single</h3>
+            <Detail>
+              <code>
+                &lt;DataTable value=<code>&#123;</code>countries
+                <code>&#125;</code> responsiveLayout="scroll" selection=
+                <code>&#123;</code>selectedProduct1<code>&#125;</code>{" "}
+                onSelectionChange=<code>&#123;</code>function
+                <code>&#125;</code>
+                selectionMode="single"&gt;
+              </code>
+              <br />
+              &nbsp; <code>
+                &lt;Column field="name" header="Moeda" /&gt;
+              </code>{" "}
+              <br />
+              &nbsp; <code>
+                &lt;Column field="name" header="Preço" /&gt;
+              </code>{" "}
+              <br />
+              &nbsp; <code>
+                &lt;Column field="name" header="Volume" /&gt;
+              </code>{" "}
+              <br />
+              &nbsp;{" "}
+              <code>
+                &lt;Column field="name" header="Mercado capital" /&gt;
+              </code>{" "}
+              <br />
+              <code>&lt;/DataTable&gt;</code> <br />
+            </Detail>
+            <DataTable
+              value={countries}
+              responsiveLayout="scroll"
+              selectionMode="single"
+              selection={selectedProduct1}
               onSelectionChange={(e) => setSelectedProduct1(e.value)}
-              dataKey="id">
+              dataKey="id"
+            >
               <Column field="name" header="Moeda"></Column>
               <Column field="price" header="Preço"></Column>
               <Column field="volume" header="Volume"></Column>
               <Column field="capital" header="Mercado capital"></Column>
             </DataTable>
           </Content>
-          <br />
-
-          <br />
-          <p>Table Select metaKey</p>
-          <SmallDetail>
-            <Link
-              href="https://www.primefaces.org/primereact/datatable/selection/"
-              target={"_blank"}
-            >
-              More about table select metaKey
-            </Link>
-          </SmallDetail>
 
           <Content>
-            <Components>
-              <Detail>
-                <code>
-                  &lt;DataTable value=<code>&#123;</code>countries<code>&#125;</code> responsiveLayout="scroll"
-                  selection=<code>&#123;</code>selectedProduct1<code>&#125;</code> onSelectionChange=<code>&#123;</code>function<code>&#125;</code>  metaKeySelection=<code>&#123;</code>false<code>&#125;</code>
-                  selectionMode="multiple"&gt;
-                </code>
-                <br />
-                 &nbsp; <code>&lt;Column field="name" header="Moeda" /&gt;</code> <br />
-                 &nbsp; <code>&lt;Column field="name" header="Preço" /&gt;</code> <br />
-                 &nbsp; <code>&lt;Column field="name" header="Volume" /&gt;</code> <br />
-                 &nbsp; <code>&lt;Column field="name" header="Mercado capital" /&gt;</code> <br />
-                 <code>&lt;/DataTable&gt;</code> <br />
-              </Detail>
-            </Components>
-          </Content>
-          <Content>
-            <DataTable 
+            <h3>Select Multiple</h3>
+            <Detail>
+              <code>
+                &lt;DataTable value=<code>&#123;</code>countries
+                <code>&#125;</code> responsiveLayout="scroll" selection=
+                <code>&#123;</code>selectedProduct1<code>&#125;</code>{" "}
+                onSelectionChange=<code>&#123;</code>function
+                <code>&#125;</code> metaKeySelection=<code>&#123;</code>false
+                <code>&#125;</code>
+                selectionMode="multiple"&gt;
+              </code>
+              <br />
+              &nbsp; <code>
+                &lt;Column field="name" header="Moeda" /&gt;
+              </code>{" "}
+              <br />
+              &nbsp; <code>
+                &lt;Column field="name" header="Preço" /&gt;
+              </code>{" "}
+              <br />
+              &nbsp; <code>
+                &lt;Column field="name" header="Volume" /&gt;
+              </code>{" "}
+              <br />
+              &nbsp;{" "}
+              <code>
+                &lt;Column field="name" header="Mercado capital" /&gt;
+              </code>{" "}
+              <br />
+              <code>&lt;/DataTable&gt;</code> <br />
+            </Detail>
+            <DataTable
               value={countries}
               responsiveLayout="scroll"
               selectionMode="multiple"
               metaKeySelection={false}
               selection={selectedProducts2}
               onSelectionChange={(e) => setSelectedProducts2(e.value)}
-              dataKey="id">
+              dataKey="id"
+            >
               <Column field="name" header="Moeda"></Column>
               <Column field="price" header="Preço"></Column>
               <Column field="volume" header="Volume"></Column>
               <Column field="capital" header="Mercado capital"></Column>
             </DataTable>
           </Content>
-          <br />
 
-          <br />
-          <p>Table Select Drag</p>
-          <SmallDetail>
-            <Link
-              href="https://www.primefaces.org/primereact/datatable/selection/"
-              target={"_blank"}
+          <Content>
+            <h3>Select drag</h3>
+            <Detail>
+              <code>
+                &lt;DataTable value=<code>&#123;</code>countries
+                <code>&#125;</code> responsiveLayout="scroll" selection=
+                <code>&#123;</code>selectedProduct1<code>&#125;</code>{" "}
+                onSelectionChange=<code>&#123;</code>function
+                <code>&#125;</code> dragSelection selectionMode="multiple"&gt;
+              </code>
+              <br />
+              &nbsp; <code>
+                &lt;Column field="name" header="Moeda" /&gt;
+              </code>{" "}
+              <br />
+              &nbsp; <code>
+                &lt;Column field="name" header="Preço" /&gt;
+              </code>{" "}
+              <br />
+              &nbsp; <code>
+                &lt;Column field="name" header="Volume" /&gt;
+              </code>{" "}
+              <br />
+              &nbsp;{" "}
+              <code>
+                &lt;Column field="name" header="Mercado capital" /&gt;
+              </code>{" "}
+              <br />
+              <code>&lt;/DataTable&gt;</code> <br />
+            </Detail>
+            <DataTable
+              value={countries}
+              responsiveLayout="scroll"
+              selectionMode="multiple"
+              dragSelection
+              selection={selectedProducts3}
+              onSelectionChange={(e) => setSelectedProducts3(e.value)}
+              dataKey="id"
             >
-              More about table select drag
-            </Link>
-          </SmallDetail>
-
-          <Content>
-            <Components>
-              <Detail>
-                <code>
-                  &lt;DataTable value=<code>&#123;</code>countries<code>&#125;</code> responsiveLayout="scroll"
-                  selection=<code>&#123;</code>selectedProduct1<code>&#125;</code> onSelectionChange=<code>&#123;</code>function<code>&#125;</code>  dragSelection
-                  selectionMode="multiple"&gt;
-                </code>
-                <br />
-                &nbsp; <code>&lt;Column field="name" header="Moeda" /&gt;</code> <br />
-                &nbsp; <code>&lt;Column field="name" header="Preço" /&gt;</code> <br />
-                &nbsp; <code>&lt;Column field="name" header="Volume" /&gt;</code> <br />
-                &nbsp; <code>&lt;Column field="name" header="Mercado capital" /&gt;</code> <br />
-                 <code>&lt;/DataTable&gt;</code> <br />
-              </Detail>
-            </Components>
-          </Content>
-          <Content>
-            <DataTable 
-               value={countries}
-               responsiveLayout="scroll"
-               selectionMode="multiple"
-               dragSelection
-               selection={selectedProducts3}
-               onSelectionChange={(e) => setSelectedProducts3(e.value)}
-               dataKey="id">
               <Column field="name" header="Moeda"></Column>
               <Column field="price" header="Preço"></Column>
               <Column field="volume" header="Volume"></Column>
               <Column field="capital" header="Mercado capital"></Column>
             </DataTable>
           </Content>
-          <br />
 
-          <br />
-          <p>Table Select Checkbox</p>
-          <SmallDetail>
-            <Link
-              href="https://www.primefaces.org/primereact/datatable/selection/"
-              target={"_blank"}
+          <Content>
+            <h3>Table Select Checkbox</h3>
+            <Detail>
+              <code>
+                &lt;DataTable value=<code>&#123;</code>countries
+                <code>&#125;</code> responsiveLayout="scroll" selection=
+                <code>&#123;</code>selectedProduct1<code>&#125;</code>{" "}
+                onSelectionChange=<code>&#123;</code>function
+                <code>&#125;</code>
+                &gt;
+              </code>
+              <br />
+              &nbsp; <code>&lt;Column selectionMode="multiple" /&gt;</code>{" "}
+              <br />
+              &nbsp; <code>
+                &lt;Column field="name" header="Moeda" /&gt;
+              </code>{" "}
+              <br />
+              &nbsp; <code>
+                &lt;Column field="name" header="Preço" /&gt;
+              </code>{" "}
+              <br />
+              &nbsp; <code>
+                &lt;Column field="name" header="Volume" /&gt;
+              </code>{" "}
+              <br />
+              &nbsp;{" "}
+              <code>
+                &lt;Column field="name" header="Mercado capital" /&gt;
+              </code>{" "}
+              <br />
+              <code>&lt;/DataTable&gt;</code> <br />
+            </Detail>
+            <DataTable
+              value={countries}
+              responsiveLayout="scroll"
+              selection={selectedProducts7}
+              onSelectionChange={(e) => setSelectedProducts7(e.value)}
+              dataKey="id"
             >
-              More about table select checkbox
-            </Link>
-          </SmallDetail>
-
-          <Content>
-            <Components>
-              <Detail>
-                <code>
-                  &lt;DataTable value=<code>&#123;</code>countries<code>&#125;</code> responsiveLayout="scroll"
-                  selection=<code>&#123;</code>selectedProduct1<code>&#125;</code> onSelectionChange=<code>&#123;</code>function<code>&#125;</code>
-                 &gt;
-                </code>
-                <br />
-                &nbsp; <code>&lt;Column selectionMode="multiple" /&gt;</code> <br />
-                &nbsp; <code>&lt;Column field="name" header="Moeda" /&gt;</code> <br />
-                &nbsp; <code>&lt;Column field="name" header="Preço" /&gt;</code> <br />
-                &nbsp; <code>&lt;Column field="name" header="Volume" /&gt;</code> <br />
-                &nbsp; <code>&lt;Column field="name" header="Mercado capital" /&gt;</code> <br />
-                 <code>&lt;/DataTable&gt;</code> <br />
-              </Detail>
-            </Components>
-          </Content>
-          <Content>
-            <DataTable 
-               value={countries}
-               responsiveLayout="scroll"
-               selection={selectedProducts7}
-               onSelectionChange={(e) => setSelectedProducts7(e.value)}
-               dataKey="id">
               <Column selectionMode="multiple" />
               <Column field="name" header="Moeda"></Column>
               <Column field="price" header="Preço"></Column>
@@ -294,12 +317,10 @@ export default function PageTable() {
               <Column field="capital" header="Mercado capital"></Column>
             </DataTable>
           </Content>
-          <br />
 
-          <br />
-          <p>Properties </p>
-          <SmallDetail>Properties used here</SmallDetail>
           <Content>
+            <h3>Properties </h3>
+            <SmallDetail>Properties used here</SmallDetail>
             <Table>
               <TableRow>
                 <b>Name</b>
@@ -314,16 +335,12 @@ export default function PageTable() {
               <TableRow>
                 <div>responsiveLayout</div>
                 <div>string</div>
-                <div>
-                Applies "scroll" to the table
-                </div>
+                <div>Applies "scroll" to the table</div>
               </TableRow>
               <TableRow>
                 <div>selectionMode</div>
                 <div>string</div>
-                <div>
-                Selection mode, valid options "single" or "multiple"
-                </div>
+                <div>Selection mode, valid options "single" or "multiple"</div>
               </TableRow>
               <TableRow>
                 <div>selection</div>
@@ -333,23 +350,18 @@ export default function PageTable() {
               <TableRow>
                 <div>metaKeySelection</div>
                 <div>boolean</div>
-                <div>
-                When false, allows you to select multiple rows
-                </div>
+                <div>When false, allows you to select multiple rows</div>
               </TableRow>
               <TableRow>
                 <div>dragSelection</div>
                 <div>string</div>
                 <div>Allows dragging to select items from the table</div>
               </TableRow>
-              
             </Table>
           </Content>
           <br />
-          <p>
-            <strong>Events</strong>{" "}
-          </p>
           <Content>
+            <h3>Events</h3>{" "}
             <Table>
               <TableRow>
                 <b>Name</b>
@@ -358,9 +370,7 @@ export default function PageTable() {
               </TableRow>
               <TableRow>
                 <div>onSelectionChange</div>
-                <div>
-                  Event
-                </div>
+                <div>Event</div>
                 <div>Callback to invoke when value changes</div>
               </TableRow>
             </Table>
@@ -370,3 +380,4 @@ export default function PageTable() {
     </Container>
   );
 }
+
