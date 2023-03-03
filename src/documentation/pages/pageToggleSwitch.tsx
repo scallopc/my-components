@@ -28,40 +28,23 @@ export default function PageToggleSwitch() {
   return (
     <Container>
       <H2>Toggle Switch</H2>
-
-      <Components>
-        <Content>
-          <ContentToggle>
-            <ToggleSwitch onChange={(e) => settoggled(e.target.checked)} />
-          </ContentToggle>
-        </Content>
-      </Components>
-
       <Box>
         <H5>Documentation</H5>
         <DocumentationContainer>
-          <p>Start</p>
-          <SmallDetail>
-            The ToggleButton uses the properties: checked, onChange, disabled
-            and size
-          </SmallDetail>
+          <p>The ToggleButton use onChange. </p>
           <Content>
-            <Components>
-              <Detail>
-                <code>
-                  &lt;ToggleSwitch checked= "switchStat" onChange=
-                  "handleOnChange" size="small" /&gt;
-                </code>
-              </Detail>
-            </Components>
+            <Detail>
+              <code>&lt;ToggleSwitch onChange= "handleOnChange" /&gt;</code>
+            </Detail>
+            <ToggleSwitch onChange={(e) => settoggled(e.target.checked)} />
           </Content>
-          <br />
 
-          <p>Properties </p>
-          <SmallDetail>
-            We use some attributes to compose the component
-          </SmallDetail>
+          <br />
           <Content>
+            <h3>Properties </h3>
+            <SmallDetail>
+              We use some attributes to compose the component
+            </SmallDetail>
             <Table>
               <TableRow>
                 <b>Name</b>
