@@ -34,20 +34,27 @@ export default function PageTabs() {
     settoggled(!toggled);
   };
 
-  return (
+return (
     <Container>
       <H2>Tabs</H2>
 
       <Box>
         <H5>Documentation</H5>
         <DocumentationContainer>
-          <SmallDetail>
+          <p>
             The tabs have two active styles, "default" and "around", the initial
             is default
-          </SmallDetail>
+          </p>
           <Content>
             <h3>Tabs default style</h3>
-            <>
+            <Detail>
+              <code>&lt;Tabs title="Title Tab"&gt;</code> <br />
+              <code>&lt;Tab&gt;</code> <br />
+              &nbsp;<code>tab contents</code>
+              <br />
+              <code>&lt;/Tab&gt;</code> <br />
+              <code>&lt;/Tabs&gt;</code> <br />
+            </Detail>
               <Tabs>
                 <Tab title="Tab 1">
                   Tab 1 Lorem, ipsum dolor sit amet consectetur adipisicing
@@ -59,85 +66,61 @@ export default function PageTabs() {
                   dolorem.
                 </Tab>
                 <Tab title="Tab 3">
-                  <ToggleSwitch onChange={teste}/>
+                  <ToggleSwitch onChange={teste} />
                 </Tab>
               </Tabs>
-            </>
           </Content>
 
           <Content>
-            <Components>
-              <Detail>
-                <code>&lt;Tabs title="Title Tab"&gt;</code> <br />
-               <code>&lt;Tab&gt;</code> <br />
-                &nbsp;<code>tab contents</code>
-                <br />
-                <code>&lt;/Tab&gt;</code> <br />
-                <code>&lt;/Tabs&gt;</code> <br />
-              </Detail>
-            </Components>
-          </Content>
-          <br />
-
-          <Components>
-            <Content>
-              <h3>Tabs around style</h3>
-              <>
-                <Tabs styleContentActive="around">
-                  <Tab title="Tab Breadcrumb" styleTabActive="around">
-                    <br />
-                    <Breadcrumbs />
-                  </Tab>
-                  <Tab title="Tab Avatar" styleTabActive="around">
-                    <br />
-                    <Avatar
-                      size="small"
-                      image="https://avatars.githubusercontent.com/u/39253660?v=4"
-                      active="on"
+            <h3>Tabs around style</h3>
+            <SmallDetail>
+              To use the around style, we use the "styleContentActive" for the
+              tab content and "styleTabActive" for the tab title
+            </SmallDetail>
+            <Detail>
+              <code>
+                &lt;Tabs title="Title Tab" styleContentActive="around"&gt;
+              </code>{" "}
+              <br />
+              &nbsp; &nbsp; &nbsp;{" "}
+              <code>&lt;Tab styleTabActive="around"&gt;</code> <br />
+              &nbsp; &nbsp; &nbsp; &nbsp; <code>tab contents</code>
+              <br />
+              &nbsp; &nbsp; &nbsp; <code>&lt;/Tab&gt;</code> <br />
+              <code>&lt;/Tabs&gt;</code> <br />
+            </Detail>
+              <Tabs styleContentActive="around">
+                <Tab title="Tab Breadcrumb" styleTabActive="around">
+                  <br />
+                  <Breadcrumbs />
+                </Tab>
+                <Tab title="Tab Avatar" styleTabActive="around">
+                  <br />
+                  <Avatar
+                    size="small"
+                    image="https://avatars.githubusercontent.com/u/39253660?v=4"
+                    active="on"
+                  />
+                </Tab>
+                <Tab title="Tab List" styleTabActive="around">
+                  <br />
+                  {list?.map((item: any, index: any) => (
+                    <List
+                      key={index}
+                      type="device"
+                      list={list}
+                      name={item.name}
                     />
-                  </Tab>
-                  <Tab title="Tab List" styleTabActive="around">
-                    <br />
-                    {list?.map((item: IList, index: any) => (
-                      <List
-                        key={index}
-                        type="device"
-                        list={list}
-                        name={item.name}
-                      />
-                    ))}
-                  </Tab>
-                </Tabs>
-              </>
-            </Content>
-          </Components>
-          <SmallDetail>
-            To use the around style, we use the "styleContentActive" for the tab
-            content and "styleTabActive" for the tab title
-          </SmallDetail>
-          <Content>
-            <Components>
-              <Detail>
-                <code>
-                  &lt;Tabs title="Title Tab" styleContentActive="around"&gt;
-                </code>{" "}
-                <br />
-                &nbsp; &nbsp; &nbsp;{" "}
-                <code>&lt;Tab styleTabActive="around"&gt;</code> <br />
-                &nbsp; &nbsp; &nbsp; &nbsp; <code>tab contents</code>
-                <br />
-                &nbsp; &nbsp; &nbsp; <code>&lt;/Tab&gt;</code> <br />
-                <code>&lt;/Tabs&gt;</code> <br />
-              </Detail>
-            </Components>
+                  ))}
+                </Tab>
+              </Tabs>
           </Content>
-          <br />
 
-          <p>Properties </p>
-          <SmallDetail>
-            We use some attributes to compose the component
-          </SmallDetail>
           <Content>
+            <h3>Properties </h3>
+            <SmallDetail>
+              We use some attributes to compose the component
+            </SmallDetail>
             <Table>
               <TableRow>
                 <b>Name</b>
