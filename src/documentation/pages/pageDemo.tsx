@@ -1,5 +1,3 @@
-import Table from "../../components/table/table";
-import { getUsers } from "../service/CustomerService";
 import { Container } from "../styles";
 import React, { useState, useEffect } from "react";
 
@@ -81,18 +79,7 @@ export default function PageDemo() {
 
   const [customers, setCustomers] = useState<any>([]);
 
-  useEffect(() => {
-    t();
-  }, []);
 
-  const t = () => {
-    getUsers()
-      .then((data) => {
-        setCustomers(data);
-        console.log(data);
-      })
-      .catch(() => {});
-  };
 
   const teste = [{ field: 'customers?.login', header: "Name" }];
 
