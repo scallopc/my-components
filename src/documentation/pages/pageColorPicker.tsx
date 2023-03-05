@@ -10,6 +10,7 @@ import {
   Table,
   TableRow,
   Link,
+  H2,
 } from "../styles";
 
 import { useState } from "react";
@@ -21,10 +22,10 @@ export default function PageColorPicker() {
 
   return (
     <Container>
+      <H2>ColorPicker</H2>
       <Box>
         <H5>Documentation</H5>
         <Content>
-          <h3>ColorPicker</h3>
           <div>
             <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
               <ColorPicker

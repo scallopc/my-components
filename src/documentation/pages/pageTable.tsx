@@ -16,60 +16,46 @@ import {
 import { useEffect, useState } from "react";
 import api from "../service/gitUsers";
 
+import axios from "axios";
 
 export default function PageTable() {
-  const [customers, setCustomers] = useState<any>([]);
+  const [users, setUsers] = useState<any>([]);
+  const [dataTable, setDataTable] = useState([]);
 
   useEffect(() => {
-    gitUsers();
+    axios("https://jsonplaceholder.typicode.com/users")
+      .then((res) => setDataTable(res.data))
+      .catch((err) => console.log(err));
   }, []);
 
   const gitUsers = () => {
-    api.get("/users")
+    api
+      .get("/users")
       .then((response) => {
-        setCustomers(response.data);
+        setUsers(response.data);
         console.log(response.data);
       })
       .catch(() => {});
   };
 
-  const teste = [{ field: 'customers?.login', header: "Name" }];
+  const column = [
+    { heading: "Name", value: "name" },
+    { heading: "Email", value: "email" },
+    { heading: "Phone", value: "phone" },
+    { heading: "City", value: "address.city" },
+  ];
+
   return (
     <Container>
       <H2>Table</H2>
       <Box>
         <H5>Documentation</H5>
         <DocumentationContainer>
-
           <Content>
             <h3>Basic</h3>
-            <Detail>
-              <code>
-                &lt;DataTable value=<code>&#123;</code>countries
-                <code>&#125;</code> responsiveLayout="scroll" &gt;
-              </code>
-              <br />
-              &nbsp; <code>
-                &lt;Column field="name" header="Moeda" /&gt;
-              </code>{" "}
-              <br />
-              &nbsp; <code>
-                &lt;Column field="name" header="Preço" /&gt;
-              </code>{" "}
-              <br />
-              &nbsp; <code>
-                &lt;Column field="name" header="Volume" /&gt;
-              </code>{" "}
-              <br />
-              &nbsp;{" "}
-              <code>
-                &lt;Column field="name" header="Mercado capital" /&gt;
-              </code>{" "}
-              <br />
-              <code>&lt;/DataTable&gt;</code> <br />
-            </Detail>
+            <Detail></Detail>
 
-            {/* <Table/> */}
+            <Table data={dataTable} column={column} />
           </Content>
 
           <Content>
@@ -134,4 +120,3 @@ export default function PageTable() {
     </Container>
   );
 }
-

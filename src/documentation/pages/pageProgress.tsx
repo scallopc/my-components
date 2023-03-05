@@ -10,6 +10,7 @@ import {
   Table,
   TableRow,
   Link,
+  H2,
 } from "../styles";
 
 import { useEffect, useRef, useState } from "react";
@@ -44,6 +45,7 @@ export default function PageProgress() {
 
   return (
     <Container>
+       <H2>Progress</H2>
       <Box>
         <H5>Documentation</H5>
 
