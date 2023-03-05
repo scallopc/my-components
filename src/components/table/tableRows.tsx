@@ -1,19 +1,14 @@
 
-type TableRowsProps = {
-  data: any;
-  columns: any;
-};
+export default function TableRows({ item, column }) {
+  return <tr>
+  {column.map((columnItem, index) => {
 
-export default function TableRows({ data, columns }: TableRowsProps) {
-  const rows = data.map((row: any, index: any) => {
-    return (
-      <tr key={index}>
-        {columns?.map((column: any, index2: any) => {
-          return <td key={index2}>{row[column.key]}</td>;
-        })}
-      </tr>
-    );
-  });
+    if(columnItem.value.includes('.')) {
+      const itemSplit = columnItem.value.split('.') //['address', 'city']
+      return <td>{item[itemSplit[0]][itemSplit[1]]}</td>
+    }
 
-  return <tbody>{rows}</tbody>;
+    return <td>{item[`${columnItem.value}`]}</td>
+  })}
+</tr>;
 }

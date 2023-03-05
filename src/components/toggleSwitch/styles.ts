@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 export const StyledLabel = styled.label<any>`
   position: relative;
+  width: fit-content;
 `;
 
 export const Span = styled.span<any>`

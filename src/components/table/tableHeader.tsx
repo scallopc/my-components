@@ -3,15 +3,8 @@ type TableHeaderProps = {
   columns: any;
 };
 
-export default function TableHeader({ columns }: TableHeaderProps) {
-
-  const headers = columns?.map((column: any, index: any) => {
-    return <th key={index}>{column.header}</th>;
-  });
-
+export default function TableHeader({ item }) {
   return (
-    <thead>
-      <tr>{headers}</tr>
-    </thead>
+    <th>{item.heading}</th>
   );
 }
