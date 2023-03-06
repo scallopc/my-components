@@ -14,29 +14,21 @@ import {
 } from "../styles";
 
 import { useEffect, useState } from "react";
-import api from "../service/gitUsers";
+import users from "../service/users";
 
 import axios from "axios";
 
 export default function PageTable() {
-  const [users, setUsers] = useState<any>([]);
   const [dataTable, setDataTable] = useState([]);
 
+  
+  console.log(dataTable);
   useEffect(() => {
     axios("https://jsonplaceholder.typicode.com/users")
       .then((res) => setDataTable(res.data))
       .catch((err) => console.log(err));
   }, []);
 
-  const gitUsers = () => {
-    api
-      .get("/users")
-      .then((response) => {
-        setUsers(response.data);
-        console.log(response.data);
-      })
-      .catch(() => {});
-  };
 
   const column = [
     { heading: "Name", value: "name" },
