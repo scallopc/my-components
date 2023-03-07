@@ -1,7 +1,6 @@
 import {
   Container,
   Box,
-  Components,
   Content,
   H5,
   DocumentationContainer,
@@ -9,12 +8,10 @@ import {
   Detail,
   Table,
   TableRow,
-  Link,
   H2,
 } from "../styles";
 
 import { useEffect, useRef, useState } from "react";
-import { ProgressBar } from "primereact/progressbar";
 
 export default function PageProgress() {
   const [value1, setValue1] = useState(0);
@@ -57,7 +54,7 @@ export default function PageProgress() {
           <Content>
             <h3>Indeterminate</h3>
             <Detail>{indeterminate}</Detail>
-            <ProgressBar mode="indeterminate" />
+            {/* <ProgressBar mode="indeterminate" /> */}
           </Content>
           <br />
 
