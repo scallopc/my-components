@@ -16,7 +16,7 @@ export const Content = styled.div<any>`
   ${(props: any) => props.styleContentActive && styleContentActive[props.styleContentActive]}
 `;
 
-export const ContainerTitle = styled.div<any>`
+export const ContainerHeaderTab = styled.div<any>`
   position: relative;
   top: 1px;
   display: flex;
