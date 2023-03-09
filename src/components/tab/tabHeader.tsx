@@ -10,7 +10,7 @@ export type props = {
   remove: any;
 };
 
-export function TabHeader({
+export default function TabHeader({
   title,
   setSelectedTab,
   index,

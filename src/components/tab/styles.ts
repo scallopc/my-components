@@ -16,6 +16,12 @@ export const Content = styled.div<any>`
   ${(props: any) => props.styleContentActive && styleContentActive[props.styleContentActive]}
 `;
 
+export const ContentBorder = styled.div`
+  display: flex;
+  margin-bottom: 3px;
+  border-bottom: 1px solid ${(props) => props.theme.line.color};
+`;
+
 export const ContainerHeaderTab = styled.div<any>`
   position: relative;
   top: 1px;
@@ -34,26 +40,31 @@ export const ContainerHeaderTab = styled.div<any>`
   }
 `;
 
-export const Title = styled.div<any>`
+export const Title = styled.span`
   cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 75px;
+  width: max-content;
 `;
 
-// export const Icon = styled(FontAwesomeIcon)`
-//   cursor: pointer;
-//   font-size: 10px;
-//   color: #9fa8b2;
-//   width: 10px;
-//   height: 10px;
-//   border-radius: 50px;
+export const IconCloseTab = styled.i`
+  cursor: pointer;
+  color: ${(props) => props.theme.default.color};
+  border-radius: 100px;
+  min-width: 20px;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-//   &:hover {
-//     padding: 1px;
-//     color: ${(props) => props.theme.colors.black};
-//     border: 1px solid ${(props) => props.theme.colors.black};
-//   }
-// `;
+  &:hover {
+    padding: 1px;
+    border: 1px solid ${(props) => props.theme.line.color};
+  }
+`;
 
-export const Body = styled.div<any>`
+export const Body = styled.div`
   padding: 10px;
 `;
 

@@ -7,6 +7,6 @@ export type props = {
   styleTabActive?: "default" | "around";
 };
 
-export function Tab({ children, styleTabActive }: props) {
+export default function Tab({ children, styleTabActive }: props) {
    return <Body styleTabActive={styleTabActive}>{children}</Body>
 }
