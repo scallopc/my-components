@@ -11,8 +11,8 @@ import {
   Table,
   TableRow,
 } from "../styles";
-import { Tab } from "../../components/tab/tab";
-import { Tabs } from "../../components/tab/tabs";
+import  Tab  from "../../components/tab/tab";
+import Tabs  from "../../components/tab/tabs";
 import Avatar from "../../components/avatar/avatar";
 import List, { IList } from "../../components/list/list";
 import { useState } from "react";
@@ -48,12 +48,7 @@ return (
           <Content>
             <h3>Tabs default style</h3>
             <Detail>
-              <code>&lt;Tabs title="Title Tab"&gt;</code> <br />
-              <code>&lt;Tab&gt;</code> <br />
-              &nbsp;<code>tab contents</code>
-              <br />
-              <code>&lt;/Tab&gt;</code> <br />
-              <code>&lt;/Tabs&gt;</code> <br />
+              
             </Detail>
               <Tabs>
                 <Tab title="Tab 1">
@@ -78,16 +73,7 @@ return (
               tab content and "styleTabActive" for the tab title
             </SmallDetail>
             <Detail>
-              <code>
-                &lt;Tabs title="Title Tab" styleContentActive="around"&gt;
-              </code>{" "}
-              <br />
-              &nbsp; &nbsp; &nbsp;{" "}
-              <code>&lt;Tab styleTabActive="around"&gt;</code> <br />
-              &nbsp; &nbsp; &nbsp; &nbsp; <code>tab contents</code>
-              <br />
-              &nbsp; &nbsp; &nbsp; <code>&lt;/Tab&gt;</code> <br />
-              <code>&lt;/Tabs&gt;</code> <br />
+              
             </Detail>
               <Tabs styleContentActive="around">
                 <Tab title="Tab Breadcrumb" styleTabActive="around">

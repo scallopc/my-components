@@ -1,38 +1,37 @@
-// {
-//   "compilerOptions": {
-//     "target": "es5",
-//     "lib": [
-//       "dom",
-//       "dom.iterable",
-//       "esnext"
-//     ],
-//     "allowJs": true,
-//     "skipLibCheck": true,
-//     "esModuleInterop": true,
-//     "allowSyntheticDefaultImports": true,
-//     "strict": false,
-//     "noImplicitAny": false,
-//     "forceConsistentCasingInFileNames": true,
-//     "noFallthroughCasesInSwitch": true,
-//     "module": "esnext",
-//     "moduleResolution": "node",
-//     "resolveJsonModule": true,
-//     "isolatedModules": true,
-//     "noEmit": true,
-//     "jsx": "react-jsx"
-//   },
-//   "include": [
-//     "src"
-//   ]
-// }
 {
-  "extends": "ts-config-single-spa",
   "compilerOptions": {
-    "jsx": "react-jsx",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": false,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
   },
-  "include": ["src/**/*"],
-  "exclude": ["src/**/*.test*"]
+  "include": [
+    "src"
+  ]
 }
+// {
+//   "compilerOptions": {
+//     "jsx": "react-tsx",
+//     "allowSyntheticDefaultImports": true,
+//     "strict": false,
+//     "noImplicitAny": false
+//   },
+//   "include": ["src/**/*", "root/js/**/*.ts", "root/js/**/*.tsx"],
+//   "exclude": ["src/**/*.test*"]
+// }
