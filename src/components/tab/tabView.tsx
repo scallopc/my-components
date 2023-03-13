@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "./styles.scss";
 
-export default function TabView({ title, tabs = [], editable = false }) {
+export function TabView({ title, tabs = [], editable = false }) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const [allTabs, setAllTabs] = useState(tabs);
 

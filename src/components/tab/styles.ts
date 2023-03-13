@@ -16,7 +16,7 @@ export const Content = styled.div<any>`
   ${(props: any) => props.styleContentActive && styleContentActive[props.styleContentActive]}
 `;
 
-export const ContentBorder = styled.div`
+export const ContentBorder = styled.div<any>`
   display: flex;
   margin-bottom: 3px;
   border-bottom: 1px solid ${(props) => props.theme.line.color};
