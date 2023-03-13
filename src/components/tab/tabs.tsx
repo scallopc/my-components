@@ -1,6 +1,6 @@
 import { ReactElement, useState } from "react";
 import { Container, Content, ContentBorder } from "./styles";
-import TabHeader from "./tabHeader";
+import {TabHeader} from "./tabHeader";
 
 export type propsTab = {
   children: ReactElement[];
@@ -10,7 +10,7 @@ export type propsTab = {
   removeTab?: (i) => void;
 };
 
-export default function Tabs({
+export function Tabs({
   children,
   selectedTabIndex,
   isActive,

@@ -11,13 +11,15 @@ import {
   Table,
   TableRow,
 } from "../styles";
-import  Tab  from "../../components/tab/tab";
-import Tabs  from "../../components/tab/tabs";
+import  {Tab}  from "../../components/tab/tab";
+import {Tabs}  from "../../components/tab/tabs";
+import {TabView}  from "../../components/tab/tabView";
 import Avatar from "../../components/avatar/avatar";
 import List, { IList } from "../../components/list/list";
 import { useState } from "react";
 import ToggleSwitch from "../../components/toggleSwitch/toggleSwitch";
 import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
+import Input from "../../components/input/input";
 
 export default function PageTabs() {
   const list = [
@@ -33,6 +35,15 @@ export default function PageTabs() {
     console.log("Toogle small", e.target.checked);
     settoggled(!toggled);
   };
+
+  const teste2 = (
+    <Input
+    label="E-mail"
+    placeholder="email@email.com"
+    type="text"
+    iconLeft="fa-solid fa-envelope"
+  />
+  );
 
 return (
     <Container>
@@ -68,13 +79,11 @@ return (
 
           <Content>
             <h3>Tabs around style</h3>
-            <SmallDetail>
+             <SmallDetail>
               To use the around style, we use the "styleContentActive" for the
               tab content and "styleTabActive" for the tab title
             </SmallDetail>
-            <Detail>
-              
-            </Detail>
+
               <Tabs styleContentActive="around">
                 <Tab title="Tab Breadcrumb" styleTabActive="around">
                   <br />
@@ -102,6 +111,18 @@ return (
               </Tabs>
           </Content>
 
+          <Content>
+          <TabView
+          title={"Tab Test"}
+          tabs={[
+            { name: "Students", content: teste2 },
+            { name: "Hello", content: '02' },
+            { name: "Students 2", content: '03' },
+            { name: "Hello 2", content: 'HelloList' },
+          ]}
+          editable={true}
+        />
+          </Content>
           <Content>
             <h3>Properties </h3>
             <SmallDetail>

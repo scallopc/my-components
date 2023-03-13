@@ -10,14 +10,14 @@ export type props = {
   remove: any;
 };
 
-export default function TabHeader({
+export function TabHeader({
   title,
   setSelectedTab,
   index,
   isActive,
   styleTabActive = "default",
   remove,
-}) {
+}: props) {
   const handleCloseTab = (event: any) => {
     event.stopPropagation();
     remove();
