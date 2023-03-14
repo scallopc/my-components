@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
-export const Icon = styled.i`
+export const Icon = styled.i<any>`
   font-size: 16px;
-  color: ${(props) => props.theme.menuOptions.color};
+  color: ${(props: any) => props.theme.menuOptions.color};
   padding: 5px 11px;
 
 `;
 
-export const IconsContainer = styled.div`
+export const IconsContainer = styled.div<any>`
   display: flex;
   gap: 5px;
 `;
 
-export const IconItem = styled.div`
+export const IconItem = styled.div<any>`
   cursor: pointer;
   padding: 5px;
   border-radius: 4px;
@@ -23,7 +23,7 @@ export const IconItem = styled.div`
   justify-content: center;
 
   &:hover {
-    background-color: ${(props) => props.theme.menuOptions.bgHover};
+    background-color: ${(props: any) => props.theme.menuOptions.bgHover};
   }
 
 `;
@@ -35,7 +35,7 @@ export const IconsContainerBlock = styled(IconsContainer)`
   gap: 10px;
 `;
 
-export const ContainerOptions = styled.div`
+export const ContainerOptions = styled.div<any>`
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -43,16 +43,16 @@ export const ContainerOptions = styled.div`
   z-index: 1;
   border-radius: 4px;
   padding: 4px 8px;
-  color: ${(props) => props.theme.appMenu.color};
-  background-color: ${(props) => props.theme.default.bgAlternative1};
-  border: 1px solid ${(props) => props.theme.card.borderColor};
+  color: ${(props: any) => props.theme.appMenu.color};
+  background-color: ${(props: any) => props.theme.default.bgAlternative1};
+  border: 1px solid ${(props: any) => props.theme.card.borderColor};
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
   width: max-content;
   right: 0;
   top: 33px;
 `;
 
-export const ItemContainerOptions = styled.div`
+export const ItemContainerOptions = styled.div<any>`
   position: relative;
   display: grid;
   align-items: center;
@@ -80,8 +80,8 @@ export const ItemContainerOptions = styled.div`
   }
 `;
 
-export const ButtonContainer = styled.div`
-  color: ${(props) => props.theme.button.colorBtnText};
+export const ButtonContainer = styled.div<any>`
+  color: ${(props: any) => props.theme.button.colorBtnText};
   background-color: transparent;
   border: 1px solid ${(props) => props.theme.button.borderBtnText};
   position: relative;
