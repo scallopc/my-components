@@ -40,7 +40,7 @@ export const ContainerHeaderTab = styled.div<any>`
   }
 `;
 
-export const Title = styled.span`
+export const Title = styled.span<any>`
   cursor: pointer;
   font-size: 12px;
   font-weight: 600;
@@ -48,7 +48,7 @@ export const Title = styled.span`
   width: max-content;
 `;
 
-export const IconCloseTab = styled.i`
+export const IconCloseTab = styled.i<any>`
   cursor: pointer;
   color: ${(props) => props.theme.default.color};
   border-radius: 100px;
@@ -64,7 +64,7 @@ export const IconCloseTab = styled.i`
   }
 `;
 
-export const Body = styled.div`
+export const Body = styled.div<any>`
   padding: 10px;
 `;
 
