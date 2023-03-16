@@ -1,38 +1,40 @@
 .TabView {
-    width: 100%;
-  }
-  
- .title {
-    font-weight: bold;
-    padding: 0.5em;
-  }
-  
+  width: 100%;
+}
+
+.title {
+  font-weight: bold;
+  padding: 0.5em;
+}
+
 .body {
-    padding: 1em;
-  }
-  
+  padding: 1em;
+}
+
 .tabs {
-    display: flex;
-    .tab {
-        padding: 5px 1em;
-      }
-      
-      .active-tab {
-        padding: 5px 1em;
-        border-left: 1px solid rgb(177, 109, 109);
-        border-top: 1px solid rgb(177, 109, 109);
-        border-right: 1px solid rgb(177, 109, 109);
-        background-color: lightgray;
+  display: flex;
+  border-bottom: 1px solid #cdcdcd;
+}
 
-        &.content {
-          border-top: transparent;
-        }
-      }
+.tab {
+  padding: 10px 15px 5px;
+  border-radius: 4px 4px 0 0;
+}
+
+.active-tab {
+  padding: 10px 15px 5px;
+  border-left: 1px solid#cdcdcd;
+  border-top: 1px solid #cdcdcd;
+  border-right: 1px solid #cdcdcd;
+
+  .tabs {
+    border-bottom: transparent;
   }
-
   
+}
+
+
 .content {
-    padding: 1em;
-    background-color: lightgrey;
-    border-top: 1px solid gray;
-  }
+  padding: 1em;
+
+}

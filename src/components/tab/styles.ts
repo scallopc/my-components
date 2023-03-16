@@ -12,7 +12,7 @@ export const Content = styled.div<any>`
   position: relative;
   display: flex;
   gap: 15px;
-  border-bottom: 1px solid ${(props) => props.theme.line.color};
+  border-bottom: 1px solid red;
   ${(props: any) => props.styleContentActive && styleContentActive[props.styleContentActive]}
 `;
 

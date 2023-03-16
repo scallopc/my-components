@@ -45,6 +45,12 @@ export default function PageTabs() {
   />
   );
 
+  const tabsTeste = [
+    { name: "Students", content: teste2 },
+    { name: "Hello", content: '02' },
+    { name: "Students 2", content: '03' },
+    { name: "Hello 2", content: 'HelloList' },
+  ]
 return (
     <Container>
       <H2>Tabs</H2>
@@ -113,13 +119,7 @@ return (
 
           <Content>
           <TabView
-          title={"Tab Test"}
-          tabs={[
-            { name: "Students", content: teste2 },
-            { name: "Hello", content: '02' },
-            { name: "Students 2", content: '03' },
-            { name: "Hello 2", content: 'HelloList' },
-          ]}
+          tabs={tabsTeste}
           editable={true}
         />
           </Content>
