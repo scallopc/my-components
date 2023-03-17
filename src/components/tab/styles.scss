@@ -13,24 +13,27 @@
 
 .tabs {
   display: flex;
-  border-bottom: 1px solid #cdcdcd;
+ // border-bottom: 1px solid #cdcdcd;
 }
 
 .tab {
   padding: 10px 15px 5px;
   border-radius: 4px 4px 0 0;
+
+  .active-tab {
+  padding: 10px 15px 5px;
+  border-left: 1px solid#cdcdcd;
+  border-top: 1px solid #880505;
+  border-right: 1px solid #cdcdcd;  
+}
+
 }
 
 .active-tab {
   padding: 10px 15px 5px;
   border-left: 1px solid#cdcdcd;
   border-top: 1px solid #cdcdcd;
-  border-right: 1px solid #cdcdcd;
-
-  .tabs {
-    border-bottom: transparent;
-  }
-  
+  border-right: 1px solid #cdcdcd;  
 }
 
 
